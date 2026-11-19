@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "instansi": "LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA",
+    "namaInovasi": "ASPIRASI BMN (Aspirasi dan Pelaporan Sarana Prasarana)",
+    "namaPengelola": "WIDYA A. AOMO",
+    "posisi": "PENGELOLA BMN",
+    "kementerian": "KEMENTERIAN KETENAGAKERJAAN",
+    "tahun": "2026",
+    "adminPin": "123456",
+    "googleFormUrl": "https://586153c8aab4d1.app.lhr.life/form",
+    "googleSheetUrl": "",
+    "googleScriptWebhookUrl": "",
+    "qrMode": "external"
+  },
+  "rooms": [
+    "Ruangan Kalapas",
+    "Ruangan AO",
+    "Ruangan TU",
+    "Ruangan Pembinaan",
+    "Ruangan Kamtib",
+    "Blok/Kamar Hunian",
+    "Dapur",
+    "Area Penjagaan",
+    "Dapur dan WC"
+  ],
+  "reports": [
+    {
+      "id": "LB-001",
+      "no": 1,
+      "tanggal": "2026-11-18",
+      "namaPelapor": "eno",
+      "lokasi": "Ruangan Kalapas",
+      "jenisLaporan": "Kerusakan barang",
+      "tingkatUrgensi": "Tinggi",
+      "namaBarang": "pintu",
+      "kondisiBarang": "Rusak berat",
+      "uraian": "rusak parah",
+      "saranUsulan": "butuh rehabilitasi pintu",
+      "fotoBarang": "/uploads/LB-001_1795020836811_326.jpg",
+      "status": "Baru diterima",
+      "verifikasiLapangan": "ok",
+      "rekomendasiTindakLanjut": "ok",
+      "fotoDokumentasiTindakLanjut": "",
+      "createdAt": "2026-11-18T16:53:56.817Z"
+    },
+    {
+      "id": "LB-002",
+      "no": 2,
+      "tanggal": "2026-11-19",
+      "namaPelapor": "Wid",
+      "lokasi": "Ruangan Kamtib",
+      "jenisLaporan": "Kerusakan barang",
+      "tingkatUrgensi": "Sedang",
+      "namaBarang": "Printer",
+      "kondisiBarang": "Rusak ringan",
+      "uraian": "Printer tidak bisa mencetak",
+      "saranUsulan": "Perlu perbaikannya",
+      "fotoBarang": "/uploads/LB-002_1795057122350_923.jpg",
+      "status": "Baru diterima",
+      "verifikasiLapangan": "",
+      "rekomendasiTindakLanjut": "",
+      "fotoDokumentasiTindakLanjut": "",
+      "createdAt": "2026-11-19T02:58:42.354Z"
+    }
+  ]
+}

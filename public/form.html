@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASPIRASI BMN Lapas Kelas III Enemawira (Formulir Aspirasi dan Pelaporan Sarana Prasarana)</title>
+  <link rel="icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
+  <link rel="shortcut icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #F0EBF8;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #202124;
+      padding: 20px 14px 60px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    .gform-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .gform-banner-card {
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #DADCE0;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .gform-purple-cap {
+      height: 10px;
+      background: #673AB7;
+    }
+    .gform-banner-visual {
+      background: linear-gradient(90deg, #0F2D59 0%, #1E40AF 48%, #E2E8F0 100%);
+      padding: 20px 24px;
+      color: #FFFFFF;
+    }
+    .gform-emblem {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .emblem-logo-img {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 2px solid #FBBF24;
+      object-fit: cover;
+      background: #0F2D59;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
+    }
+    .gform-emblem strong {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+    .gform-emblem span {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FDE68A;
+    }
+    .gform-title-block {
+      padding: 22px 24px;
+    }
+    .gform-title-block h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 10px;
+    }
+    .gform-title-block p {
+      font-size: 14px;
+      color: #5F6368;
+    }
+    .gf-req { color: #D93025; }
+    .gform-question-card {
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #DADCE0;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+      transition: box-shadow 0.2s ease;
+    }
+    .gform-row-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .gf-label {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 14px;
+    }
+    .gf-input-line, .gf-textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #DADCE0;
+      padding: 8px 0;
+      font-family: inherit;
+      font-size: 14px;
+      color: #202124;
+      transition: border-color 0.2s;
+    }
+    .gf-input-line:focus, .gf-textarea:focus {
+      outline: none;
+      border-bottom: 2px solid #673AB7;
+    }
+    .gf-input-short, .gf-select {
+      padding: 9px 12px;
+      border: 1px solid #DADCE0;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #202124;
+      min-width: 240px;
+      background: #FFFFFF;
+    }
+    .gf-radio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gf-radio-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #202124;
+      cursor: pointer;
+    }
+    .gf-radio-item input[type="radio"] {
+      accent-color: #673AB7;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .gf-upload-dropzone {
+      border: 2px dashed #C4B5FD;
+      border-radius: 12px;
+      padding: 18px;
+      background: #FAF5FF;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .gf-upload-dropzone:hover {
+      border-color: #673AB7;
+      background: #F3E8FF;
+    }
+    .gf-upload-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .gf-upload-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      border: 1px solid #DDD6FE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .gf-upload-placeholder strong {
+      display: block;
+      font-size: 14px;
+      color: #1E293B;
+      margin-bottom: 2px;
+    }
+    .gf-file-name {
+      font-size: 12.5px;
+      color: #5F6368;
+    }
+    .gf-add-file-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid #DADCE0;
+      border-radius: 6px;
+      color: #1A73E8;
+      font-weight: 600;
+      font-size: 13.5px;
+      cursor: pointer;
+      background: #FFFFFF;
+    }
+    .gf-preview-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: #FFFFFF;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #DDD6FE;
+    }
+    .gf-preview-container img {
+      max-height: 160px;
+      max-width: 240px;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      object-fit: cover;
+    }
+    .gf-preview-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gf-preview-meta span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #065F46;
+    }
+    .btn-mini {
+      background: #EFF6FF;
+      color: #174978;
+      border: 1px solid #BFDBFE;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-danger-sm {
+      background: #FFE4E6;
+      color: #E11D48;
+      border: 1px solid #FECDD3;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .gform-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
+    .gf-btn-submit {
+      background: #673AB7;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 26px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .gf-btn-submit:hover { background: #512DA8; }
+    .gf-btn-reset {
+      background: transparent;
+      color: #673AB7;
+      border: none;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    /* Modal Konfirmasi */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: 14px;
+      max-width: 440px;
+      width: 100%;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+    .modal-check {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #DCFCE7;
+      color: #16A34A;
+      font-size: 28px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .modal-detail-box {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      text-align: left;
+      font-size: 13px;
+    }
+    .md-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed #E2E8F0;
+    }
+    .md-row:last-child { border-bottom: none; }
+    .badge-baru {
+      background: #DBEAFE;
+      color: #1E40AF;
+      padding: 3px 9px;
+      border-radius: 99px;
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    @media (max-width: 640px) {
+      .gform-row-split { grid-template-columns: 1fr; }
+      .gform-emblem span { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gform-wrapper">
+    <!-- HEADER BANNER GOOGLE FORM -->
+    <div class="gform-banner-card">
+      <div class="gform-purple-cap"></div>
+      <div class="gform-banner-visual">
+        <div class="gform-emblem">
+          <img src="data:image/jpeg;base64,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" alt="Logo Kementerian Imigrasi dan Pemasyarakatan" class="emblem-logo-img" />
+          <div>
+            <strong>KEMENTERIAN IMIGRASI DAN PEMASYARAKATAN REPUBLIK INDONESIA</strong>
+            <span>LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</span>
+          </div>
+        </div>
+      </div>
+      <div class="gform-title-block">
+        <h2>ASPIRASI BMN Lapas Kelas III Enemawira (Formulir Aspirasi dan Pelaporan Sarana Prasarana)</h2>
+        <p>Sampaikan aspirasi dan pelaporan kondisi sarana prasarana BMN Lapas Kelas III Enemawira melalui formulir ini. Kolom dengan tanda <span class="gf-req">*</span> wajib diisi.</p>
+      </div>
+    </div>
+
+    <form id="form-google-aspirasi" onsubmit="submitForm(event)">
+      <!-- 1. TANGGAL PELAPORAN -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-tanggal">Tanggal Pelaporan <span class="gf-req">*</span></label>
+        <input type="date" id="gf-tanggal" class="gf-input-short" required />
+      </div>
+
+      <!-- 2. NAMA PELAPOR -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-nama">Nama Pelapor <span class="gf-req">*</span></label>
+        <input type="text" id="gf-nama" class="gf-input-line" placeholder="Teks jawaban singkat" required />
+      </div>
+
+      <!-- 3. LOKASI ATAU RUANGAN -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-lokasi">Lokasi atau Ruangan <span class="gf-req">*</span></label>
+        <select id="gf-lokasi" class="gf-select" required>
+          <option value="Ruangan Kalapas">Ruangan Kalapas</option>
+          <option value="Ruangan AO">Ruangan AO</option>
+          <option value="Ruangan TU">Ruangan TU</option>
+          <option value="Ruangan Pembinaan">Ruangan Pembinaan</option>
+          <option value="Ruangan Kamtib">Ruangan Kamtib</option>
+          <option value="Blok/Kamar Hunian">Blok/Kamar Hunian</option>
+          <option value="Dapur">Dapur</option>
+          <option value="Area Penjagaan">Area Penjagaan</option>
+          <option value="Dapur dan WC">Dapur dan WC</option>
+        </select>
+      </div>
+
+      <!-- 4 & 5. JENIS LAPORAN & TINGKAT URGENSI -->
+      <div class="gform-row-split">
+        <div class="gform-question-card">
+          <label class="gf-label">Jenis Laporan <span class="gf-req">*</span></label>
+          <div class="gf-radio-list">
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Kerusakan barang" checked /><span>Kerusakan barang</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Kebutuhan fasilitas" /><span>Kebutuhan fasilitas</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Pemeliharaan" /><span>Pemeliharaan</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Penataan ruang" /><span>Penataan ruang</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Usulan efisiensi" /><span>Usulan efisiensi</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfJenis" value="Kondisi fasilitas" /><span>Kondisi fasilitas</span></label>
+          </div>
+        </div>
+
+        <div class="gform-question-card">
+          <label class="gf-label">Tingkat Urgensi <span class="gf-req">*</span></label>
+          <div class="gf-radio-list">
+            <label class="gf-radio-item"><input type="radio" name="gfUrgensi" value="Rendah" /><span>Rendah</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfUrgensi" value="Sedang" checked /><span>Sedang</span></label>
+            <label class="gf-radio-item"><input type="radio" name="gfUrgensi" value="Tinggi" /><span>Tinggi</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. NAMA BARANG ATAU FASILITAS -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-barang">Nama barang atau fasilitas <span class="gf-req">*</span></label>
+        <input type="text" id="gf-barang" class="gf-input-line" placeholder="Contoh: Printer, AC, Meja, Komputer..." required />
+      </div>
+
+      <!-- 7. KONDISI BARANG -->
+      <div class="gform-question-card">
+        <label class="gf-label">Kondisi barang <span class="gf-req">*</span></label>
+        <div class="gf-radio-list">
+          <label class="gf-radio-item"><input type="radio" name="gfKondisi" value="Baik" /><span>Baik</span></label>
+          <label class="gf-radio-item"><input type="radio" name="gfKondisi" value="Rusak ringan" checked /><span>Rusak ringan</span></label>
+          <label class="gf-radio-item"><input type="radio" name="gfKondisi" value="Rusak berat" /><span>Rusak berat</span></label>
+          <label class="gf-radio-item"><input type="radio" name="gfKondisi" value="Tidak berfungsi" /><span>Tidak berfungsi</span></label>
+          <label class="gf-radio-item"><input type="radio" name="gfKondisi" value="Belum tersedia" /><span>Belum tersedia</span></label>
+        </div>
+      </div>
+
+      <!-- 8. UNGGAH FOTO KONDISI BARANG -->
+      <div class="gform-question-card">
+        <label class="gf-label">Unggah foto kondisi barang (Dokumentasi Bukti Laporan)</label>
+        <div class="gf-upload-dropzone" onclick="document.getElementById('gf-foto-input').click()">
+          <input type="file" id="gf-foto-input" accept="image/*" style="display:none" onchange="handlePhoto(event)" />
+          <div id="gf-upload-placeholder" class="gf-upload-placeholder">
+            <div class="gf-upload-icon">📷</div>
+            <div>
+              <strong>Klik untuk Ambil Foto Kamera / Pilih Gambar dari Galeri</strong>
+              <span class="gf-file-name">Format JPG, PNG, WEBP (Otomatis dikompresi agar cepat terkirim)</span>
+            </div>
+            <span class="gf-add-file-btn">📤 Tambahkan file (Add file)</span>
+          </div>
+
+          <div id="gf-foto-preview-box" class="gf-preview-container" style="display:none;" onclick="event.stopPropagation()">
+            <img id="gf-foto-preview-img" src="" alt="Preview Foto Barang" />
+            <div class="gf-preview-meta">
+              <span id="gf-preview-caption">Foto siap dikirim bersama laporan</span>
+              <div style="display:flex; gap:8px;">
+                <button type="button" class="btn-mini" onclick="document.getElementById('gf-foto-input').click()">🔄 Ganti Foto</button>
+                <button type="button" class="btn-danger-sm" onclick="clearPhoto()">🗑️ Hapus Foto</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. URAIAN ASPIRASI ATAU PERMASALAHAN -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-uraian">Uraian aspirasi atau permasalahan <span class="gf-req">*</span></label>
+        <textarea id="gf-uraian" class="gf-textarea" rows="2" placeholder="Teks jawaban panjang" required></textarea>
+      </div>
+
+      <!-- 10. SARAN ATAU USULAN TINDAK LANJUT -->
+      <div class="gform-question-card">
+        <label class="gf-label" for="gf-saran">Saran atau usulan tindak lanjut</label>
+        <textarea id="gf-saran" class="gf-textarea" rows="2" placeholder="Teks jawaban panjang"></textarea>
+      </div>
+
+      <!-- TOMBOL KIRIM & RESET FORM -->
+      <div class="gform-submit-row">
+        <button type="submit" class="gf-btn-submit" id="gf-btn-kirim">Kirim</button>
+        <button type="button" class="gf-btn-reset" onclick="resetForm()">Reset form</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- MODAL KONFIRMASI PENGIRIMAN -->
+  <div id="modal-konfirmasi" class="modal-backdrop" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-check">✓</div>
+      <h3>Laporan berhasil dikirim!</h3>
+      <p style="font-size:13px;color:#64748B;">ASPIRASI BMN Lapas Kelas III Enemawira</p>
+      <div class="modal-detail-box">
+        <div class="md-row"><span>Kode Laporan :</span> <strong id="mk-kode">#LB-001</strong></div>
+        <div class="md-row"><span>Tanggal :</span> <strong id="mk-tanggal">-</strong></div>
+        <div class="md-row"><span>Ruangan :</span> <strong id="mk-lokasi">-</strong></div>
+        <div class="md-row"><span>Barang :</span> <strong id="mk-barang">-</strong></div>
+        <div class="md-row"><span>Status :</span> <span class="badge-baru">Baru diterima</span></div>
+      </div>
+      <div id="mk-foto-wrap" style="display:none; margin-bottom:14px;">
+        <span style="display:block; font-size:11.5px; color:#475569; margin-bottom:4px;">📷 Bukti Foto Terlampir:</span>
+        <img id="mk-foto-img" src="" alt="Bukti Foto" style="max-height:140px; border-radius:8px; border:1px solid #CBD5E1;" />
+      </div>
+      <p style="font-size:12.5px; color:#475569; margin-bottom:16px;">Data laporan dan dokumentasi foto Anda telah masuk ke Google Sheets Pengelola BMN.</p>
+      <button class="gf-btn-submit" onclick="tutupModal()">Kirim Laporan Lainnya</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('gf-tanggal').value = new Date().toISOString().slice(0, 10);
+    var currentPhotoBase64 = "";
+
+    function handlePhoto(event) {
+      var file = event.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = new Image();
+        img.onload = function() {
+          // Kompresi ukuran optimal (max 640px, quality 0.65 -> sekitar 35KB-55KB) agar stabil dikirim melewati tunnel internet publik (.lhr.life)
+          var w = img.width, h = img.height, max = 640;
+          if (w > max || h > max) {
+            if (w > h) { h = Math.round((h * max) / w); w = max; }
+            else { w = Math.round((w * max) / h); h = max; }
+          }
+          var canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          currentPhotoBase64 = canvas.toDataURL('image/jpeg', 0.65);
+          document.getElementById('gf-foto-preview-img').src = currentPhotoBase64;
+          document.getElementById('gf-preview-caption').textContent = "✓ " + file.name + " siap dikirim bersama laporan";
+          document.getElementById('gf-upload-placeholder').style.display = 'none';
+          document.getElementById('gf-foto-preview-box').style.display = 'flex';
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearPhoto() {
+      currentPhotoBase64 = "";
+      document.getElementById('gf-foto-input').value = "";
+      document.getElementById('gf-foto-preview-box').style.display = 'none';
+      document.getElementById('gf-upload-placeholder').style.display = 'flex';
+    }
+
+    function resetForm() {
+      document.getElementById('gf-nama').value = "";
+      document.getElementById('gf-barang').value = "";
+      document.getElementById('gf-uraian').value = "";
+      document.getElementById('gf-saran').value = "";
+      clearPhoto();
+    }
+
+    function formatTglIndo(d) {
+      if (!d) return '-';
+      var p = d.split('-');
+      return p.length === 3 ? (p[2] + '/' + p[1] + '/' + p[0]) : d;
+    }
+
+    async function submitForm(event) {
+      event.preventDefault();
+      var btn = document.getElementById('gf-btn-kirim');
+      btn.disabled = true;
+      btn.textContent = "Mengirim...";
+
+      var payload = {
+        tanggal: document.getElementById('gf-tanggal').value,
+        namaPelapor: document.getElementById('gf-nama').value,
+        lokasi: document.getElementById('gf-lokasi').value,
+        jenisLaporan: document.querySelector('input[name="gfJenis"]:checked').value,
+        tingkatUrgensi: document.querySelector('input[name="gfUrgensi"]:checked').value,
+        namaBarang: document.getElementById('gf-barang').value,
+        kondisiBarang: document.querySelector('input[name="gfKondisi"]:checked').value,
+        uraian: document.getElementById('gf-uraian').value,
+        saranUsulan: document.getElementById('gf-saran').value,
+        fotoBarang: currentPhotoBase64
+      };
+
+      try {
+        var sentPhoto = currentPhotoBase64;
+        var res = await fetch('/api/reports', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        // Jika tunnel membatasi ukuran foto pertama, kompres lebih kecil (360px) dan kirim ulang otomatis
+        if (!res.ok && currentPhotoBase64) {
+          payload.fotoBarang = await shrinkBase64Further(currentPhotoBase64, 360, 0.5);
+          sentPhoto = payload.fotoBarang;
+          res = await fetch('/api/reports', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        var data = await res.json();
+        if (data.success && data.report) {
+          var c = data.report;
+          document.getElementById('mk-kode').textContent = "#" + c.id;
+          document.getElementById('mk-tanggal').textContent = formatTglIndo(c.tanggal);
+          document.getElementById('mk-lokasi').textContent = c.lokasi;
+          document.getElementById('mk-barang').textContent = c.namaBarang;
+          if (sentPhoto) {
+            document.getElementById('mk-foto-img').src = sentPhoto;
+            document.getElementById('mk-foto-wrap').style.display = 'block';
+          } else {
+            document.getElementById('mk-foto-wrap').style.display = 'none';
+          }
+          resetForm();
+          document.getElementById('modal-konfirmasi').style.display = 'flex';
+        } else {
+          alert("Gagal mengirim laporan: " + (data.message || "Terjadi kesalahan server"));
+        }
+      } catch (err) {
+        // Fallback retry 1x dengan kompresi ekstra ringan jika koneksi tunnel terputus karena ukuran paket foto
+        try {
+          if (payload.fotoBarang) {
+            payload.fotoBarang = await shrinkBase64Further(payload.fotoBarang, 340, 0.45);
+          }
+          var retryRes = await fetch('/api/reports', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          var retryData = await retryRes.json();
+          if (retryData.success && retryData.report) {
+            var rc = retryData.report;
+            document.getElementById('mk-kode').textContent = "#" + rc.id;
+            document.getElementById('mk-tanggal').textContent = formatTglIndo(rc.tanggal);
+            document.getElementById('mk-lokasi').textContent = rc.lokasi;
+            document.getElementById('mk-barang').textContent = rc.namaBarang;
+            if (payload.fotoBarang) {
+              document.getElementById('mk-foto-img').src = payload.fotoBarang;
+              document.getElementById('mk-foto-wrap').style.display = 'block';
+            }
+            resetForm();
+            document.getElementById('modal-konfirmasi').style.display = 'flex';
+            return;
+          }
+        } catch (e2) {}
+        alert("Gagal mengirim laporan, pastikan terminal JALANKAN_SISTEM.bat di laptop masih terbuka dan link tunnel masih aktif.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Kirim";
+      }
+    }
+
+    function shrinkBase64Further(b64, maxDim, q) {
+      return new Promise(function(resolve) {
+        var img = new Image();
+        img.onload = function() {
+          var w = img.width, h = img.height;
+          if (w > maxDim || h > maxDim) {
+            if (w > h) { h = Math.round((h * maxDim) / w); w = maxDim; }
+            else { w = Math.round((w * maxDim) / h); h = maxDim; }
+          }
+          var c = document.createElement('canvas');
+          c.width = w; c.height = h;
+          c.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(c.toDataURL('image/jpeg', q));
+        };
+        img.onerror = function() { resolve(""); };
+        img.src = b64;
+      });
+    }
+
+    function tutupModal() {
+      document.getElementById('modal-konfirmasi').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

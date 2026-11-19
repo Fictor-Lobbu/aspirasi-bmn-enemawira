@@ -1,0 +1,11 @@
+{
+  "name": "aspirasi-bmn-enemawira",
+  "version": "1.0.0",
+  "description": "Sistem Informasi ASPIRASI BMN (Aspirasi dan Pelaporan Sarana Prasarana) - Lapas Kelas III Enemawira",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Widya A. Aomo - Pengelola BMN",
+  "license": "MIT"
+}

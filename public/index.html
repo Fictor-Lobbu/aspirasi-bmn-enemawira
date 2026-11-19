@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASPIRASI BMN - Lapas Kelas III Enemawira</title>
+  <link rel="icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
+  <link rel="shortcut icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
+  <link rel="apple-touch-icon" href="/logo-kemenimipas.jpg?v=3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- HEADER UTAMA INOVASI MAGANG -->
+  <header class="top-header no-print">
+    <div class="header-flex">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <button class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Buka / Tutup Menu Sidebar" aria-label="Toggle Sidebar">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="16" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="brand-identity" onclick="openStep('step-konsep')">
+          <div class="logo-mark" aria-hidden="true">
+            <img src="/logo-kemenimipas.jpg" alt="Logo Kementerian Imigrasi dan Pemasyarakatan" class="system-header-logo" />
+          </div>
+          <div>
+            <div class="header-kicker">LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</div>
+            <h1 class="header-title">ASPIRASI BMN <span>(Aspirasi dan Pelaporan Sarana Prasarana)</span></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-status-pill">
+        <span class="pulse-dot"></span>
+        <span>Sistem Aktif</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- LAYOUT UTAMA: SIDEBAR + KONTEN -->
+  <div class="app-shell">
+    <!-- SIDEBAR NAVIGASI -->
+    <aside class="app-sidebar no-print" id="app-sidebar">
+      <div class="sidebar-group-label">MENU UTAMA SISTEM</div>
+      <nav class="sidebar-nav">
+        <button class="side-nav-item active" data-step="step-konsep" onclick="openStep('step-konsep')">
+          <span class="sni-icon">📘</span>
+          <div class="sni-text">
+            <strong>1. Konsep &amp; Media</strong>
+            <span>Latar Belakang &amp; 6 Jenis</span>
+          </div>
+        </button>
+
+        <button class="side-nav-item" data-step="step-carakerja" onclick="openStep('step-carakerja')">
+          <span class="sni-icon">📱</span>
+          <div class="sni-text">
+            <strong>2. Cara Kerja &amp; QR Code</strong>
+            <span>Simulasi 6 Langkah &amp; Poster</span>
+          </div>
+        </button>
+
+        <button class="side-nav-item" data-step="step-gform" onclick="openStep('step-gform')">
+          <span class="sni-icon">📝</span>
+          <div class="sni-text">
+            <strong>3. Google Form</strong>
+            <span>Formulir Pelaporan BMN</span>
+          </div>
+        </button>
+
+        <button class="side-nav-item" data-step="step-gsheet" onclick="openStep('step-gsheet')">
+          <span class="sni-icon">📊</span>
+          <div class="sni-text">
+            <strong>4. Google Sheets</strong>
+            <span>Rekapitulasi &amp; Verifikasi</span>
+          </div>
+          <span class="side-badge" id="side-badge-total">0</span>
+        </button>
+
+        <button class="side-nav-item" data-step="step-pelaksanaan" onclick="openStep('step-pelaksanaan')">
+          <span class="sni-icon">🎯</span>
+          <div class="sni-text">
+            <strong>5. Tahapan &amp; Indikator</strong>
+            <span>Manfaat &amp; Kesimpulan</span>
+          </div>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer-note">
+        <strong>SINERGI SIMAN</strong>
+        <p>Pendukung pengawasan &amp; pemeliharaan internal BMN Lapas Kelas III Enemawira.</p>
+      </div>
+    </aside>
+
+    <!-- OVERLAY MOBILE SIDEBAR -->
+    <div class="sidebar-backdrop no-print" id="sidebar-backdrop" onclick="toggleSidebar()"></div>
+
+    <main class="container main-area">
+
+    <!-- =======================================================================
+         STEP 1: KONSEP DAN BENTUK INOVASI & MEDIA YANG DIGUNAKAN
+         ======================================================================= -->
+    <section id="step-konsep" class="step-section active no-print">
+      <div class="doc-banner">
+        <div>
+          <span class="doc-chip">BAGIAN 1: KONSEP DAN BENTUK INOVASI</span>
+          <h2>ASPIRASI BMN (Aspirasi dan Pelaporan Sarana Prasarana)</h2>
+          <p>ASPIRASI BMN merupakan inovasi pelayanan internal berbasis digital yang menggunakan <strong>Google Form</strong> sebagai media pengaduan, penyampaian aspirasi, dan usulan kebutuhan sarana prasarana. Inovasi ini memungkinkan pegawai menyampaikan informasi secara langsung tanpa harus datang terlebih dahulu kepada pengelola BMN atau menunggu pemeriksaan rutin.</p>
+        </div>
+        <div class="doc-banner-cta">
+          <button class="btn-purple" onclick="openStep('step-gform')">Buka Formulir Google Form →</button>
+          <button class="btn-outline-light" onclick="openStep('step-carakerja')">Simulasi 6 Langkah Scan QR</button>
+        </div>
+      </div>
+
+      <div class="grid-2-col">
+        <!-- TABEL 6 JENIS LAPORAN SESUAI DOKUMEN -->
+        <div class="card-box">
+          <div class="card-title-row">
+            <h3>Jenis Laporan yang Dapat Disampaikan</h3>
+            <span class="sub-tag">Sesuai Tabel Konsep Inovasi</span>
+          </div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>Jenis Laporan</th>
+                <th>Contoh</th>
+                <th>Aksi Cepat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Kerusakan barang</strong></td>
+                <td>Komputer, printer, AC rusak</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Kerusakan barang')">Laporkan</button></td>
+              </tr>
+              <tr>
+                <td><strong>2. Kebutuhan fasilitas</strong></td>
+                <td>Kursi, meja, lemari</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Kebutuhan fasilitas')">Laporkan</button></td>
+              </tr>
+              <tr>
+                <td><strong>3. Pemeliharaan</strong></td>
+                <td>Perbaikan instalasi listrik atau fasilitas kantor</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Pemeliharaan')">Laporkan</button></td>
+              </tr>
+              <tr>
+                <td><strong>4. Penataan ruangan</strong></td>
+                <td>Penataan ulang fasilitas kerja</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Penataan ruang')">Laporkan</button></td>
+              </tr>
+              <tr>
+                <td><strong>5. Usulan efisiensi</strong></td>
+                <td>Pemanfaatan barang yang kurang optimal</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Usulan efisiensi')">Laporkan</button></td>
+              </tr>
+              <tr>
+                <td><strong>6. Kondisi fasilitas</strong></td>
+                <td>Fasilitas yang berpotensi membahayakan pengguna</td>
+                <td><button class="btn-mini" onclick="pilihJenisLangsung('Kondisi fasilitas')">Laporkan</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 4 MEDIA YANG DIGUNAKAN SESUAI DOKUMEN -->
+        <div class="card-box">
+          <div class="card-title-row">
+            <h3>Media yang Digunakan</h3>
+            <span class="sub-tag">Memanfaatkan Fasilitas Gratis &amp; Terintegrasi</span>
+          </div>
+          <div class="media-cards-grid">
+            <div class="media-item" onclick="openStep('step-gform')">
+              <div class="media-icon gform-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 8h-5v-2h5v2zm0-4h-5v-2h5v2zm0-4h-2V7h2v2z"/></svg>
+              </div>
+              <div>
+                <h4>1. Google Form</h4>
+                <p>Sebagai media pengisian laporan kerusakan, aspirasi, dan kebutuhan fasilitas.</p>
+                <span class="media-link">Klik untuk membuka Formulir →</span>
+              </div>
+            </div>
+
+            <div class="media-item" onclick="openStep('step-gsheet')">
+              <div class="media-icon gsheet-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM7 11h4v2H7v-2zm0 3h4v2H7v-2zm0 3h4v2H7v-2zm6-6h4v2h-4v-2zm0 3h4v2h-4v-2zm0 3h4v2h-4v-2z"/></svg>
+              </div>
+              <div>
+                <h4>2. Google Sheets</h4>
+                <p>Sebagai tempat rekapitulasi dan pemantauan seluruh laporan yang masuk.</p>
+                <span class="media-link">Klik untuk membuka Rekapitulasi →</span>
+              </div>
+            </div>
+
+            <div class="media-item" onclick="openStep('step-carakerja')">
+              <div class="media-icon qr-icon">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-3 0h2v3h-2v-3zm3 3h3v2h-3v-2zm-3 3h2v2h-2v-2zm3 0h3v2h-3v-2z"/></svg>
+              </div>
+              <div>
+                <h4>3. QR Code</h4>
+                <p>Sebagai akses cepat menuju formulir ASPIRASI BMN yang ditempel pada papan informasi internal / setiap ruangan.</p>
+                <span class="media-link">Lihat QR Code &amp; Cara Kerja →</span>
+              </div>
+            </div>
+
+            <div class="media-item" onclick="openStep('step-gform')">
+              <div class="media-icon photo-icon">📷</div>
+              <div>
+                <h4>4. Dokumentasi Foto</h4>
+                <p>Sebagai bukti pendukung laporan kondisi atau kerusakan fasilitas yang diunggah pada formulir.</p>
+                <span class="media-link">Unggah Foto Bukti →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LATAR BELAKANG, TUJUAN, DAN SASARAN KEGIATAN -->
+      <div class="grid-3-col">
+        <div class="card-box">
+          <h4>Latar Belakang</h4>
+          <p class="text-sm">Barang Milik Negara (BMN) merupakan unsur penting dalam menunjang kelancaran tugas di Lembaga Pemasyarakatan. Permasalahan kerusakan peralatan kantor dan kebutuhan pemeliharaan terkadang tidak segera diketahui oleh pengelola BMN karena belum tersedianya media pelaporan internal yang mudah diakses seluruh pegawai.</p>
+        </div>
+        <div class="card-box">
+          <h4>5 Tujuan Kegiatan</h4>
+          <ol class="doc-list">
+            <li>Mempermudah pegawai menyampaikan laporan kerusakan dan kebutuhan sarana prasarana.</li>
+            <li>Meningkatkan kecepatan identifikasi permasalahan BMN.</li>
+            <li>Meningkatkan komunikasi antara pegawai dan pengelola BMN.</li>
+            <li>Membantu menentukan skala prioritas pemeliharaan dan perbaikan.</li>
+            <li>Mewujudkan pengelolaan BMN yang lebih responsif, transparan, dan akuntabel.</li>
+          </ol>
+        </div>
+        <div class="card-box">
+          <h4>4 Sasaran Kegiatan</h4>
+          <ol class="doc-list">
+            <li><strong>Seluruh pegawai</strong> Lapas Kelas III Enemawira.</li>
+            <li><strong>Pengelola BMN</strong> (Widya A. Aomo).</li>
+            <li><strong>Penanggung jawab ruangan</strong>.</li>
+            <li><strong>Pimpinan</strong> sebagai pihak yang memberikan arahan dan persetujuan tindak lanjut sesuai kewenangan.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         STEP 2: CARA KERJA PELAPORAN DENGAN KODE QR (6 LANGKAH + 7 ALUR)
+         ======================================================================= -->
+    <section id="step-carakerja" class="step-section">
+      <div class="card-box no-print" style="margin-bottom: 22px;">
+        <div class="card-title-row">
+          <div>
+            <span class="doc-chip">BAGIAN 2: CARA KERJA INOVASI</span>
+            <h3>Cara Kerja Pelaporan dengan Kode QR (6 Langkah Interaktif) &amp; Poster QR Code</h3>
+          </div>
+          <button class="btn-purple" onclick="window.print()">🖨️ Cetak Poster QR Code ASPIRASI BMN</button>
+        </div>
+
+        <!-- 6 STEP BAR VISUAL PERSIS GAMBAR DOKUMEN -->
+        <div class="six-steps-banner">
+          <div class="six-step-box active" id="ind-phone-1" onclick="setPhoneStep(1)">
+            <span class="ss-num">1</span>
+            <p>Scan kode QR untuk memulai</p>
+          </div>
+          <div class="six-step-box" id="ind-phone-2" onclick="setPhoneStep(2)">
+            <span class="ss-num">2</span>
+            <p>Aplikasi akan menampilkan formulir</p>
+          </div>
+          <div class="six-step-box" id="ind-phone-3" onclick="setPhoneStep(3)">
+            <span class="ss-num">3</span>
+            <p>Pilih jenis laporan atau unggah foto</p>
+          </div>
+          <div class="six-step-box" id="ind-phone-4" onclick="setPhoneStep(4)">
+            <span class="ss-num">4</span>
+            <p>Isi detail kejadian</p>
+          </div>
+          <div class="six-step-box" id="ind-phone-5" onclick="setPhoneStep(5)">
+            <span class="ss-num">5</span>
+            <p>Periksa kembali (detail opsional)</p>
+          </div>
+          <div class="six-step-box" id="ind-phone-6" onclick="setPhoneStep(6)">
+            <span class="ss-num">6</span>
+            <p>Konfirmasi pengiriman</p>
+          </div>
+        </div>
+
+        <div class="qr-and-phone-grid">
+          <!-- SIMULATOR HP INTERAKTIF PERSIS GAMBAR "CARA KERJA PELAPORAN DENGAN KODE QR" -->
+          <div class="phone-simulator-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-statusbar">
+                <span>9:41</span>
+                <span>📶 🔋</span>
+              </div>
+
+              <!-- LAYAR 1: SCAN KODE QR -->
+              <div class="phone-screen active" id="phone-step-1">
+                <div class="phone-top-bar">Scan QR Code</div>
+                <div class="camera-viewfinder">
+                  <div class="scan-brackets">
+                    <div id="phone-mini-qr"></div>
+                  </div>
+                  <p class="camera-hint">Arahkan kamera ke kode QR ASPIRASI BMN</p>
+                </div>
+                <button class="phone-btn-primary" onclick="setPhoneStep(2)">Simulasikan Scan QR Code →</button>
+              </div>
+
+              <!-- LAYAR 2: FORMULIR BERHASIL DIBUKA -->
+              <div class="phone-screen" id="phone-step-2">
+                <div class="phone-top-bar">← ASPIRASI BMN</div>
+                <div class="phone-location-pill">📍 Lapas Kelas III Enemawira</div>
+                <div class="phone-opened-card">
+                  <div class="opened-icon">📋</div>
+                  <h4>Formulir berhasil dibuka</h4>
+                  <p>ASPIRASI BMN (Aspirasi dan Pelaporan Sarana Prasarana)</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:8px; margin-top:auto;">
+                  <button class="phone-btn-primary" onclick="setPhoneStep(3)">OK (Lanjut di HP)</button>
+                  <button class="phone-btn-outline" onclick="openStep('step-gform')">Buka Tampilan Penuh Google Form</button>
+                </div>
+              </div>
+
+              <!-- LAYAR 3: PILIH JENIS LAPORAN ATAU UNGGAH FOTO -->
+              <div class="phone-screen" id="phone-step-3">
+                <div class="phone-top-bar" onclick="setPhoneStep(2)" style="cursor:pointer;">← Jenis Laporan</div>
+                <div class="phone-type-grid">
+                  <div class="phone-type-card selected" id="ptype-kerusakan" onclick="selectPhoneType('Kerusakan barang', this)">
+                    <span class="pt-icon">🔧</span>
+                    <strong>Kerusakan Barang</strong>
+                  </div>
+                  <div class="phone-type-card" id="ptype-kebutuhan" onclick="selectPhoneType('Kebutuhan fasilitas', this)">
+                    <span class="pt-icon">➕</span>
+                    <strong>Kebutuhan Fasilitas</strong>
+                  </div>
+                  <div class="phone-type-card" onclick="selectPhoneType('Pemeliharaan', this)">
+                    <span class="pt-icon">🛠️</span>
+                    <strong>Pemeliharaan</strong>
+                  </div>
+                  <div class="phone-type-card" onclick="selectPhoneType('Penataan ruang', this)">
+                    <span class="pt-icon">📐</span>
+                    <strong>Penataan Ruang</strong>
+                  </div>
+                </div>
+                <div class="phone-field" style="margin-top:10px;">
+                  <label>Nama Barang &amp; Kondisi</label>
+                  <input type="text" id="phone-input-barang" value="AC" placeholder="Contoh: AC, Printer, Meja..." />
+                </div>
+                <div class="phone-field">
+                  <label>📷 Unggah Foto Bukti Kondisi Barang</label>
+                  <label for="phone-foto-input" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;border:1.5px dashed #0284C7;border-radius:8px;background:#F0F9FF;color:#0369A1;font-size:11.5px;font-weight:700;cursor:pointer;">
+                    <span>📤 Pilih / Ambil Foto Kamera</span>
+                  </label>
+                  <input type="file" id="phone-foto-input" accept="image/*" onchange="handlePhonePhoto(event)" style="display:none;" />
+                  <div id="phone-foto-preview-wrap" style="display:none;margin-top:6px;text-align:center;">
+                    <img id="phone-foto-preview-img" src="" alt="Preview HP" style="max-height:85px;border-radius:6px;border:1px solid #CBD5E1;" />
+                  </div>
+                </div>
+                <button class="phone-btn-primary" style="margin-top:auto;" onclick="setPhoneStep(4)">Berikutnya</button>
+              </div>
+
+              <!-- LAYAR 4: DESKRIPSI KEJADIAN -->
+              <div class="phone-screen" id="phone-step-4">
+                <div class="phone-top-bar" onclick="setPhoneStep(3)" style="cursor:pointer;">← Deskripsi Kejadian</div>
+                <div class="phone-field">
+                  <label>📅 Tanggal Kejadian</label>
+                  <input type="date" id="phone-input-tanggal" value="2026-11-01" />
+                </div>
+                <div class="phone-field">
+                  <label>📍 Lokasi</label>
+                  <select id="phone-input-lokasi"></select>
+                </div>
+                <div class="phone-field">
+                  <label>👤 Nama Pelapor</label>
+                  <input type="text" id="phone-input-pelapor" value="Pegawai Lapas" />
+                </div>
+                <div class="phone-field">
+                  <label>Uraian Masalah</label>
+                  <textarea id="phone-input-uraian" rows="3">Mohon perbaikan AC di ruang administrasi.</textarea>
+                </div>
+                <button class="phone-btn-primary" style="margin-top:auto;" onclick="preparePhoneReview()">Berikutnya</button>
+              </div>
+
+              <!-- LAYAR 5: PERIKSA KEMBALI -->
+              <div class="phone-screen" id="phone-step-5">
+                <div class="phone-top-bar" onclick="setPhoneStep(4)" style="cursor:pointer;">← Periksa Kembali</div>
+                <div class="phone-review-box">
+                  <strong>Data Laporan Anda</strong>
+                  <div id="phone-review-content" style="margin-top:8px; font-size:12px; line-height:1.5;"></div>
+                </div>
+                <div style="font-size:11.5px; color:#475569; margin:10px 0;">
+                  <strong>Keterangan:</strong><br/>
+                  Pastikan data sudah benar sebelum mengirim laporan.
+                </div>
+                <button class="phone-btn-primary" style="margin-top:auto;" onclick="submitFromPhoneSimulator()">Kirim</button>
+              </div>
+
+              <!-- LAYAR 6: DETAIL LAPORAN / KONFIRMASI PENGIRIMAN -->
+              <div class="phone-screen" id="phone-step-6">
+                <div class="phone-top-bar">← Detail Laporan</div>
+                <div class="phone-success-banner">
+                  <div class="ps-check">✓</div>
+                  <strong>Laporan berhasil dikirim!</strong>
+                </div>
+                <div class="phone-receipt-card">
+                  <strong>Detail Laporan</strong>
+                  <div class="pr-row"><span>Kode Laporan :</span> <strong id="phone-res-kode">#LB-001</strong></div>
+                  <div class="pr-row"><span>Tanggal :</span> <span id="phone-res-tgl">01/11/2026</span></div>
+                  <div class="pr-row"><span>Status :</span> <span class="badge-baru">Baru Diterima</span></div>
+                  <p style="font-size:11px; color:#475569; margin-top:8px;">Anda akan menerima pembaruan melalui sistem.</p>
+                  <hr style="margin:8px 0; border:none; border-top:1px solid #E2E8F0;" />
+                  <p style="font-size:11px; color:#334155;"><strong>Info Tambahan:</strong><br/>Terima kasih atas partisipasi Anda.</p>
+                </div>
+                <button class="phone-btn-primary" style="margin-top:auto;" onclick="openStep('step-gsheet')">Lihat di Rekap Google Sheets →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ALUR PELAKSANAAN 7 TAHAP & POSTER QR CODE UTAMA -->
+          <div class="alur-and-poster-col">
+            <!-- PANEL PENGATURAN TARGET QR CODE & INTEGRASI GOOGLE FORM / GOOGLE SHEETS -->
+            <div class="card-box no-print" style="margin-bottom:16px; border:1.5px solid #C4B5FD; background:linear-gradient(135deg,#FFFFFF 0%,#F5F3FF 100%);">
+              <div class="card-title-row" style="margin-bottom:8px;">
+                <h4 style="color:#4C1D95;">⚙️ Pengaturan Tujuan Scan QR Code (Google Form &amp; Google Sheets)</h4>
+                <span class="sub-tag" style="background:#EDE9FE;color:#5B21B6;">Fleksibel 2 Mode</span>
+              </div>
+              <p class="text-sm" style="margin-bottom:12px;">
+                Pilih ke mana pegawai akan diarahkan saat melakukan <strong>Scan QR Code</strong> dari HP mereka:
+              </p>
+
+              <div class="qr-mode-switch" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+                <label class="qr-mode-card" id="label-mode-internal" style="padding:10px 12px; border:2px solid #673AB7; border-radius:10px; background:#FFFFFF; cursor:pointer; display:flex; gap:8px; align-items:flex-start;">
+                  <input type="radio" name="qrTargetMode" value="internal" checked onchange="changeQrMode('internal')" style="margin-top:3px; accent-color:#673AB7;" />
+                  <div>
+                    <strong style="font-size:12.5px; display:block; color:#1E293B;">Mode 1: Form Sistem (Wi-Fi / Hotspot Sama)</strong>
+                    <span style="font-size:11px; color:#64748B;">Scan QR langsung membuka <code>http://10.188.57.127:3000/form</code> (Tampilan Form seperti screenshot Anda) untuk HP di Wi-Fi yang sama.</span>
+                  </div>
+                </label>
+
+                <label class="qr-mode-card" id="label-mode-external" style="padding:10px 12px; border:2px solid #CBD5E1; border-radius:10px; background:#FFFFFF; cursor:pointer; display:flex; gap:8px; align-items:flex-start;">
+                  <input type="radio" name="qrTargetMode" value="external" onchange="changeQrMode('external')" style="margin-top:3px; accent-color:#673AB7;" />
+                  <div>
+                    <strong style="font-size:12.5px; display:block; color:#1E293B;">Mode 2: Form Sama Persis (Beda Jaringan / Data Seluler)</strong>
+                    <span style="font-size:11px; color:#64748B;">Membuka halaman <code>/form</code> yang <strong>100% SAMA dengan Mode 1</strong> melalui Link Internet Publik agar bisa di-scan dari HP mana pun yang berbeda jaringan.</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- PANEL MODE 2: FORMAT SAMA PERSIS MODE 1 UNTUK BEDA JARINGAN -->
+              <div id="external-google-config" style="display:none; background:#FFFFFF; padding:12px; border-radius:10px; border:1px solid #DDD6FE; margin-bottom:10px;">
+                <div style="background:#EFF6FF; border:1px solid #BFDBFE; padding:10px 12px; border-radius:8px; margin-bottom:10px; font-size:12px; color:#1E3A8A;">
+                  <strong>🌐 Status Link Internet Publik (Format Form 100% Sama dengan Mode 1):</strong>
+                  <div id="tunnel-status-text" style="margin-top:4px; font-weight:700; color:#0F2D59;">Mendeteksi link internet publik otomatis...</div>
+                </div>
+                <div style="margin-bottom:8px;">
+                  <label style="font-size:12px; font-weight:700; color:#334155; display:block; margin-bottom:4px;">🔗 Link Publik Form Mode 2 (Otomatis mengarah ke `/form` yang sama persis dengan Mode 1):</label>
+                  <div style="display:flex; gap:6px;">
+                    <input type="url" id="input-google-form-url" placeholder="https://....lhr.life/form (Otomatis terisi saat tunnel aktif)" style="flex:1; padding:8px 10px; border:1px solid #CBD5E1; border-radius:6px; font-size:12.5px;" oninput="onExternalGoogleUrlInput()" />
+                    <button type="button" class="btn-mini" onclick="aktifkanTunnelPublik()">🔄 Buat Link Publik Otomatis</button>
+                  </div>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-top:8px;">
+                  <span style="font-size:11.5px; color:#475569;">Semua laporan &amp; foto dari Mode 2 juga langsung masuk otomatis ke <strong>4. Google Sheets</strong> di sistem ini.</span>
+                  <button type="button" class="btn-purple" style="padding:7px 14px; font-size:12px;" onclick="saveGoogleIntegrationSettings()">💾 Gunakan Link Ini di QR Code</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster-qr-card" id="printable-qr-poster">
+              <div class="poster-head" style="display:flex; align-items:center; justify-content:center; gap:14px; text-align:left;">
+                <img src="/logo-kemenimipas.jpg" alt="Logo Kemenimipas" style="width:54px; height:54px; border-radius:50%; border:2px solid #FDE68A; object-fit:cover; flex-shrink:0;" />
+                <div>
+                  <small>LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</small>
+                  <h4>ASPIRASI BMN</h4>
+                  <span>(Aspirasi dan Pelaporan Sarana Prasarana)</span>
+                </div>
+              </div>
+              <div class="poster-qr-box" id="main-qr-code-box"></div>
+              <div class="no-print" style="margin-bottom:12px;">
+                <label style="font-size:11.5px;font-weight:700;color:#1E40AF;display:block;margin-bottom:4px;">🔗 URL Tujuan Saat QR Code Di-Scan oleh Device / HP User:</label>
+                <div style="display:flex;gap:6px;max-width:460px;margin:0 auto;">
+                  <input type="text" id="qr-custom-url-input" style="flex:1;padding:7px 10px;border:1px solid #CBD5E1;border-radius:6px;font-size:12px;text-align:center;font-weight:600;color:#0F2D59;" oninput="renderMainQRCodes(this.value)" />
+                  <button type="button" class="btn-mini" onclick="copyQrLink()">Salin Link</button>
+                  <button type="button" class="btn-mini" onclick="bukaLinkQrLangsung()">Tes Buka ↗</button>
+                </div>
+              </div>
+              <p class="poster-caption">
+                <strong>PINDAI (SCAN) QR CODE INI</strong><br/>
+                Untuk mengisi <strong>Google Form ASPIRASI BMN</strong> (laporan kerusakan barang, kebutuhan fasilitas, pemeliharaan, atau penataan ruangan). Data otomatis masuk ke <strong>Google Sheets</strong>.
+              </p>
+              <div class="poster-footer-meta">
+                Pengelola BMN: <strong>Widya A. Aomo</strong> • Lapas Kelas III Enemawira
+              </div>
+            </div>
+
+            <div class="card-box no-print" style="margin-top:16px;">
+              <h4>7 Alur Pelaksanaan ASPIRASI BMN (Sesuai Dokumen)</h4>
+              <ol class="seven-alur-list">
+                <li><strong>1. Pegawai menemukan permasalahan:</strong> Barang rusak, fasilitas kurang memadai, atau kebutuhan sarana prasarana.</li>
+                <li><strong>2. Pegawai mengirimkan aspirasi:</strong> Memindai QR Code atau membuka Google Form untuk mengisi laporan.</li>
+                <li><strong>3. Laporan diterima pengelola BMN:</strong> Data laporan masuk ke Google Sheets dan diperiksa oleh pengelola BMN.</li>
+                <li><strong>4. Verifikasi Lapangan:</strong> Pengelola BMN melakukan pemeriksaan langsung untuk memastikan kebenaran laporan.</li>
+                <li><strong>5. Penentuan prioritas:</strong> Laporan dikelompokkan berdasarkan tingkat urgensi dan dampaknya terhadap pelaksanaan tugas.</li>
+                <li><strong>6. Tindak Lanjut:</strong> Pengelola BMN menyusun rekomendasi, koordinasi, atau mengajukan perbaikan kepada pimpinan sesuai kewenangan &amp; anggaran.</li>
+                <li><strong>7. Evaluasi dan Dokumentasi:</strong> Hasil tindak lanjut dicatat dan didokumentasikan sebagai bahan evaluasi bulanan.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         STEP 3: DESAIN GOOGLE FORM ASPIRASI BMN (REPLIKA GAMBAR 1 DOKUMEN)
+         ======================================================================= -->
+    <section id="step-gform" class="step-section no-print">
+      <div class="gform-top-bar">
+        <div class="gform-top-left">
+          <span class="gform-logo-badge">📝 Google Form</span>
+          <span>Desain Formulir Sesuai Gambar 1 Dokumen Proposal</span>
+        </div>
+        <div class="gform-top-right">
+          <button class="btn-mini" onclick="isiContohDataDokumen()">⚡ Isi Contoh Data Dokumen</button>
+          <button class="btn-mini" onclick="openStep('step-gsheet')">Lihat Jawaban di Google Sheets →</button>
+        </div>
+      </div>
+
+      <div class="gform-wrapper">
+        <!-- HEADER BANNER GOOGLE FORM -->
+        <div class="gform-banner-card">
+          <div class="gform-purple-cap"></div>
+          <div class="gform-banner-visual">
+            <div class="gform-emblem">
+              <img src="/logo-kemenimipas.jpg" alt="Logo Kementerian Imigrasi dan Pemasyarakatan" class="emblem-logo-img" />
+              <div>
+                <strong>KEMENTERIAN IMIGRASI DAN PEMASYARAKATAN REPUBLIK INDONESIA</strong>
+                <span>LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</span>
+              </div>
+            </div>
+          </div>
+          <div class="gform-title-block">
+            <h2>ASPIRASI BMN Lapas Kelas III Enemawira (Formulir Aspirasi dan Pelaporan Sarana Prasarana)</h2>
+            <p>Sampaikan aspirasi dan pelaporan kondisi sarana prasarana BMN Lapas Kelas III Enemawira melalui formulir ini. Kolom dengan tanda <span class="gf-req">*</span> wajib diisi.</p>
+          </div>
+        </div>
+
+        <form id="form-google-aspirasi" onsubmit="submitGoogleForm(event)">
+          <!-- 1. TANGGAL PELAPORAN -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-tanggal">Tanggal Pelaporan <span class="gf-req">*</span></label>
+            <input type="date" id="gf-tanggal" class="gf-input-short" required />
+          </div>
+
+          <!-- 2. NAMA PELAPOR -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-nama">Nama Pelapor <span class="gf-req">*</span></label>
+            <input type="text" id="gf-nama" class="gf-input-line" placeholder="Teks jawaban singkat" required />
+          </div>
+
+          <!-- 3. LOKASI ATAU RUANGAN -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-lokasi">Lokasi atau Ruangan <span class="gf-req">*</span></label>
+            <select id="gf-lokasi" class="gf-select" required></select>
+          </div>
+
+          <!-- 4 & 5. JENIS LAPORAN & TINGKAT URGENSI (SEJAJAR SEPERTI GAMBAR 1) -->
+          <div class="gform-row-split">
+            <div class="gform-question-card">
+              <label class="gf-label">Jenis Laporan <span class="gf-req">*</span></label>
+              <div class="gf-radio-list">
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Kerusakan barang" checked />
+                  <span>Kerusakan barang</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Kebutuhan fasilitas" />
+                  <span>Kebutuhan fasilitas</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Pemeliharaan" />
+                  <span>Pemeliharaan</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Penataan ruang" />
+                  <span>Penataan ruang</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Usulan efisiensi" />
+                  <span>Usulan efisiensi</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfJenis" value="Kondisi fasilitas" />
+                  <span>Kondisi fasilitas</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="gform-question-card">
+              <label class="gf-label">Tingkat Urgensi <span class="gf-req">*</span></label>
+              <div class="gf-radio-list">
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfUrgensi" value="Rendah" />
+                  <span>Rendah</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfUrgensi" value="Sedang" checked />
+                  <span>Sedang</span>
+                </label>
+                <label class="gf-radio-item">
+                  <input type="radio" name="gfUrgensi" value="Tinggi" />
+                  <span>Tinggi</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. NAMA BARANG ATAU FASILITAS -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-barang">Nama barang atau fasilitas <span class="gf-req">*</span></label>
+            <input type="text" id="gf-barang" class="gf-input-line" placeholder="Contoh: Printer, AC, Meja, Komputer..." required />
+          </div>
+
+          <!-- 7. KONDISI BARANG -->
+          <div class="gform-question-card">
+            <label class="gf-label">Kondisi barang <span class="gf-req">*</span></label>
+            <div class="gf-radio-list">
+              <label class="gf-radio-item">
+                <input type="radio" name="gfKondisi" value="Baik" />
+                <span>Baik</span>
+              </label>
+              <label class="gf-radio-item">
+                <input type="radio" name="gfKondisi" value="Rusak ringan" checked />
+                <span>Rusak ringan</span>
+              </label>
+              <label class="gf-radio-item">
+                <input type="radio" name="gfKondisi" value="Rusak berat" />
+                <span>Rusak berat</span>
+              </label>
+              <label class="gf-radio-item">
+                <input type="radio" name="gfKondisi" value="Tidak berfungsi" />
+                <span>Tidak berfungsi</span>
+              </label>
+              <label class="gf-radio-item">
+                <input type="radio" name="gfKondisi" value="Belum tersedia" />
+                <span>Belum tersedia</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 8. UNGGAH FOTO KONDISI BARANG -->
+          <div class="gform-question-card">
+            <label class="gf-label">Unggah foto kondisi barang (Dokumentasi Bukti Laporan)</label>
+            <div class="gf-upload-dropzone" id="gf-upload-dropzone" onclick="document.getElementById('gf-foto-input').click()">
+              <input type="file" id="gf-foto-input" accept="image/*" style="display:none" onchange="handleGFormPhoto(event)" />
+              <div id="gf-upload-placeholder" class="gf-upload-placeholder">
+                <div class="gf-upload-icon">📷</div>
+                <div>
+                  <strong>Klik untuk Ambil Foto Kamera / Pilih Gambar dari Galeri</strong>
+                  <span id="gf-foto-filename" class="gf-file-name">Format JPG, PNG, WEBP (Otomatis dikompresi agar cepat terkirim)</span>
+                </div>
+                <span class="gf-add-file-btn">📤 Tambahkan file (Add file)</span>
+              </div>
+
+              <div id="gf-foto-preview-box" class="gf-preview-container" style="display:none;" onclick="event.stopPropagation()">
+                <img id="gf-foto-preview-img" src="" alt="Preview Foto Barang" />
+                <div class="gf-preview-meta">
+                  <span id="gf-preview-caption">Foto siap dikirim bersama laporan</span>
+                  <div style="display:flex; gap:8px;">
+                    <button type="button" class="btn-mini" onclick="document.getElementById('gf-foto-input').click()">🔄 Ganti Foto</button>
+                    <button type="button" class="btn-danger-sm" onclick="hapusFotoGForm()">🗑️ Hapus Foto</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. URAIAN ASPIRASI ATAU PERMASALAHAN -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-uraian">Uraian aspirasi atau permasalahan <span class="gf-req">*</span></label>
+            <textarea id="gf-uraian" class="gf-textarea" rows="2" placeholder="Teks jawaban panjang" required></textarea>
+          </div>
+
+          <!-- 10. SARAN ATAU USULAN TINDAK LANJUT -->
+          <div class="gform-question-card">
+            <label class="gf-label" for="gf-saran">Saran atau usulan tindak lanjut</label>
+            <textarea id="gf-saran" class="gf-textarea" rows="2" placeholder="Teks jawaban panjang"></textarea>
+          </div>
+
+          <!-- TOMBOL KIRIM & RESET FORM PERSIS GAMBAR 1 -->
+          <div class="gform-submit-row">
+            <button type="submit" class="gf-btn-submit" id="gf-btn-kirim">Kirim</button>
+            <button type="button" class="gf-btn-reset" onclick="resetGoogleForm()">Reset form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         STEP 4: GOOGLE SHEETS REKAPITULASI & VERIFIKASI PENGELOLA BMN
+         ======================================================================= -->
+    <section id="step-gsheet" class="step-section">
+      <!-- KOP SURAT RESMI CETAK LAPORAN BULANAN SESUAI FORMAT SURAT DINAS -->
+      <div class="print-only official-letterhead">
+        <table class="kop-table">
+          <tr>
+            <td class="kop-logo-cell">
+              <img src="/logo-kemenimipas.jpg" alt="Logo Kemenimipas" class="kop-logo-img" />
+            </td>
+            <td class="kop-text-cell">
+              <div class="kop-line-1">KEMENTERIAN IMIGRASI DAN PEMASYARAKATAN</div>
+              <div class="kop-line-2">REPUBLIK INDONESIA</div>
+              <div class="kop-line-3">DIREKTORAT JENDERAL PEMASYARAKATAN</div>
+              <div class="kop-line-4">LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</div>
+              <div class="kop-line-addr">Jalan Raya Tahuna Petta No. 19, Kab. Kepulauan Sangihe 95856</div>
+              <div class="kop-line-addr">Laman: www.lapasenemawira.kemenkumham.go.id &nbsp; Surel: lp.enemawira@kemenkumham.go.id</div>
+            </td>
+          </tr>
+        </table>
+        <div class="kop-divider"></div>
+        <h3 class="kop-doc-title">REKAPITULASI LAPORAN ASPIRASI BMN (SARANA DAN PRASARANA)</h3>
+      </div>
+
+      <!-- TOOLBAR GOOGLE SHEETS -->
+      <div class="gsheet-header-card no-print">
+        <div class="gsheet-title-left">
+          <div class="gsheet-badge-icon">📊</div>
+          <div>
+            <h3>Google Sheets — Rekapitulasi &amp; Pemantauan Laporan ASPIRASI BMN</h3>
+            <p>Tempat rekapitulasi, verifikasi lapangan, penentuan skala prioritas, dan pembaruan 5 status tindak lanjut oleh Pengelola BMN.</p>
+          </div>
+        </div>
+        <div class="gsheet-actions">
+          <a id="btn-open-cloud-gsheet" href="#" target="_blank" class="btn-sheet" style="display:none; text-decoration:none;">🌐 Buka Google Sheets Cloud Asli ↗</a>
+          <a href="/api/export-excel" class="btn-sheet" style="text-decoration:none; display:inline-flex; align-items:center;" onclick="exportSpreadsheetCSV(event)">📥 Unduh Rekapitulasi Excel (.xls)</a>
+          <button class="btn-sheet" onclick="window.print()">🖨️ Cetak Rekapitulasi Resmi</button>
+          <button class="btn-sheet-outline" onclick="resetKeDataContohProposal()">🗑️ Bersihkan Semua Data</button>
+        </div>
+      </div>
+
+      <!-- 5 STATUS RESMI FILTER PILLS -->
+      <div class="status-legend-bar no-print">
+        <span class="legend-title">Filter 5 Status Laporan Resmi:</span>
+        <button class="status-filter-pill active" onclick="setSheetStatusFilter('', this)">Semua Status</button>
+        <button class="status-filter-pill" onclick="setSheetStatusFilter('Baru diterima', this)">1. Baru diterima</button>
+        <button class="status-filter-pill" onclick="setSheetStatusFilter('Dalam verifikasi', this)">2. Dalam verifikasi</button>
+        <button class="status-filter-pill" onclick="setSheetStatusFilter('Dalam proses tindak lanjut', this)">3. Dalam proses tindak lanjut</button>
+        <button class="status-filter-pill" onclick="setSheetStatusFilter('Menunggu persetujuan atau anggaran', this)">4. Menunggu persetujuan atau anggaran</button>
+        <button class="status-filter-pill" onclick="setSheetStatusFilter('Selesai ditindaklanjuti', this)">5. Selesai ditindaklanjuti</button>
+      </div>
+
+      <!-- TABEL 1: FORMAT REKAPITULASI LAPORAN (5 KOLOM PERSIS DOKUMEN) -->
+      <div class="card-box print-clean-card" style="margin-bottom: 22px;">
+        <div class="card-title-row no-print">
+          <div>
+            <h4>A. Tabel Rekapitulasi Laporan ASPIRASI BMN (Format Resmi Cetak &amp; Unduh)</h4>
+            <p class="text-sm">Tabel ini dicetak beserta Kop Surat Resmi dan Tanda Tangan Kaur TU &amp; Kalapas Kelas III Enemawira.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="doc-rekap-table">
+            <thead>
+              <tr>
+                <th style="width:60px; text-align:center;">NO</th>
+                <th style="width:140px; text-align:center;">TANGGAL</th>
+                <th style="width:200px;">BARANG</th>
+                <th>PERMASALAHAN</th>
+                <th style="width:220px; text-align:center;">STATUS</th>
+              </tr>
+            </thead>
+            <tbody id="rekap-ringkas-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TANDA TANGAN RESMI CETAK REKAP BULANAN -->
+      <div class="print-only official-signature-wrapper">
+        <table class="official-sig-table">
+          <tr>
+            <td style="width:50%;"></td>
+            <td style="width:50%; text-align:center; padding-bottom:4px;">Mengetahui,</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold;">Kaur TU</td>
+            <td style="text-align:center; font-weight:bold;">Kalapas Kelas III Enemawira</td>
+          </tr>
+          <tr>
+            <td style="height:75px;"></td>
+            <td style="height:75px;"></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:bold; text-decoration:underline;">Alvine J. Makapia</td>
+            <td style="text-align:center; font-weight:bold; text-decoration:underline;">Meidy Tigau</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;">NIP: 197204272001122001</td>
+            <td style="text-align:center;">NIP: 197605011997031001</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- TABEL 2: DATABASE LENGKAP GOOGLE SHEETS + VERIFIKASI LAPANGAN PENGELOLA BMN -->
+      <div class="card-box no-print">
+        <div class="card-title-row">
+          <div>
+            <h4>B. Spreadsheet Database Lengkap Google Form &amp; Tindak Lanjut Pengelola BMN</h4>
+            <p class="text-sm">Klik tombol <strong>"Verifikasi &amp; Status"</strong> pada baris laporan untuk mengubah status, mencatat hasil pemeriksaan lapangan, dan mengunggah dokumentasi.</p>
+          </div>
+          <input type="text" id="sheet-search-input" class="sheet-search" placeholder="Cari barang, ruangan, pelapor..." oninput="renderSheetsTables()" />
+        </div>
+
+        <div class="table-wrap">
+          <table class="gsheet-grid-table">
+            <thead>
+              <tr>
+                <th>Row</th>
+                <th>Kode</th>
+                <th>Tanggal Pelaporan</th>
+                <th>Nama Pelapor</th>
+                <th>Lokasi / Ruangan</th>
+                <th>Jenis Laporan</th>
+                <th>Tingkat Urgensi</th>
+                <th>Nama Barang</th>
+                <th>Kondisi Barang</th>
+                <th>Uraian Permasalahan</th>
+                <th>Saran / Usulan</th>
+                <th>Foto</th>
+                <th>Status Laporan (5 Tahap)</th>
+                <th>Verifikasi &amp; Rekomendasi BMN</th>
+                <th>Aksi Pengelola BMN</th>
+              </tr>
+            </thead>
+            <tbody id="gsheet-full-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         STEP 5: PELAKSANAAN, MANFAAT INOVASI, INDIKATOR KEBERHASILAN & PENUTUP
+         ======================================================================= -->
+    <section id="step-pelaksanaan" class="step-section no-print">
+      <div class="grid-2-col">
+        <!-- TAHAPAN PELAKSANAAN -->
+        <div class="card-box">
+          <span class="doc-chip">BAGIAN 5: PELAKSANAAN DAN HASIL YANG DIHARAPKAN</span>
+          <h3 style="margin-top:8px;">Tahapan Pelaksanaan Inovasi</h3>
+          <table class="doc-table" style="margin-top:12px;">
+            <thead>
+              <tr>
+                <th>Tahapan</th>
+                <th>Kegiatan</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Persiapan</strong></td>
+                <td>Mengidentifikasi permasalahan sarana prasarana</td>
+                <td><span class="badge-done">Terlaksana</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. Pembuatan</strong></td>
+                <td>Membuat Google Form dan Google Sheets</td>
+                <td><span class="badge-done">Terlaksana</span></td>
+              </tr>
+              <tr>
+                <td><strong>3. Sosialisasi</strong></td>
+                <td>Memperkenalkan inovasi kepada pegawai</td>
+                <td><span class="badge-done">Terlaksana</span></td>
+              </tr>
+              <tr>
+                <td><strong>4. Implementasi</strong></td>
+                <td>Membuka akses pelaporan melalui QR Code</td>
+                <td><span class="badge-done">Terlaksana</span></td>
+              </tr>
+              <tr>
+                <td><strong>5. Pemantauan</strong></td>
+                <td>Memeriksa laporan yang masuk</td>
+                <td><span class="badge-done">Aktif Berjalan</span></td>
+              </tr>
+              <tr>
+                <td><strong>6. Evaluasi</strong></td>
+                <td>Membuat rekapitulasi dan laporan tindak lanjut</td>
+                <td><span class="badge-done">Setiap Bulan</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- INDIKATOR KEBERHASILAN -->
+        <div class="card-box">
+          <span class="doc-chip">TARGET CAPAIAN</span>
+          <h3 style="margin-top:8px;">Indikator Keberhasilan</h3>
+          <table class="doc-table" style="margin-top:12px;">
+            <thead>
+              <tr>
+                <th>Indikator</th>
+                <th>Target Awal</th>
+                <th>Capaian Sistem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tersedianya Google Form</td>
+                <td>1 formulir</td>
+                <td><span class="badge-done">✓ 1 Formulir Aktif</span></td>
+              </tr>
+              <tr>
+                <td>Tersedianya database laporan</td>
+                <td>1 database</td>
+                <td><span class="badge-done">✓ 1 Database Sheets</span></td>
+              </tr>
+              <tr>
+                <td>Tersedianya QR Code</td>
+                <td>1 QR Code</td>
+                <td><span class="badge-done">✓ 1 QR Code Siap Cetak</span></td>
+              </tr>
+              <tr>
+                <td>Sosialisasi kepada pegawai</td>
+                <td>Terlaksana</td>
+                <td><span class="badge-done">✓ Terlaksana</span></td>
+              </tr>
+              <tr>
+                <td>Rekapitulasi laporan</td>
+                <td>Setiap bulan</td>
+                <td><span class="badge-done" id="ind-rekap-count">✓ 0 Laporan Tercatat</span></td>
+              </tr>
+              <tr>
+                <td>Verifikasi laporan</td>
+                <td>Seluruh laporan yang masuk</td>
+                <td><span class="badge-done">✓ Terverifikasi</span></td>
+              </tr>
+              <tr>
+                <td>Dokumentasi tindak lanjut</td>
+                <td>Setiap tindakan yang dilaksanakan</td>
+                <td><span class="badge-done">✓ Terdokumentasi</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MANFAAT INOVASI 3 PIHAK -->
+      <div class="grid-3-col" style="margin-top:20px;">
+        <div class="card-box">
+          <h4>Manfaat Bagi Pengelola BMN</h4>
+          <ul class="doc-list">
+            <li>Mempermudah memperoleh informasi permasalahan fasilitas.</li>
+            <li>Mengurangi keterlambatan mengetahui kerusakan barang.</li>
+            <li>Mempermudah penyusunan prioritas pemeliharaan.</li>
+            <li>Memiliki dokumentasi laporan yang lebih teratur.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <h4>Manfaat Bagi Pegawai</h4>
+          <ul class="doc-list">
+            <li>Mempermudah penyampaian aspirasi.</li>
+            <li>Tidak perlu menyampaikan laporan secara berulang.</li>
+            <li>Meningkatkan partisipasi dalam menjaga BMN.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <h4>Manfaat Bagi Lapas Kelas III Enemawira</h4>
+          <ul class="doc-list">
+            <li>Meningkatkan kualitas sarana dan prasarana.</li>
+            <li>Mendukung kelancaran pelaksanaan tugas.</li>
+            <li>Meningkatkan efisiensi pemeliharaan.</li>
+            <li>Mewujudkan budaya peduli terhadap aset negara.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- KESIMPULAN DAN SARAN (PENUTUP) -->
+      <div class="card-box" style="margin-top:20px;">
+        <h4>Penutup: Kesimpulan &amp; Saran (Korelasi dengan SIMAN)</h4>
+        <p class="text-sm" style="margin-top:6px;">
+          <strong>Kesimpulan:</strong> Inovasi ASPIRASI BMN merupakan salah satu upaya untuk meningkatkan efektivitas pengelolaan sarana dan prasarana di Lembaga Pemasyarakatan Kelas III Enemawira melalui pemanfaatan teknologi informasi sederhana. Pengelola BMN dapat memperoleh informasi yang lebih cepat sebagai dasar pelaksanaan verifikasi, evaluasi, dan rekomendasi tindak lanjut. <strong>Inovasi ini merupakan pendukung pengawasan dan pemeliharaan internal yang tidak menggantikan proses administrasi dan pelaporan resmi BMN melalui SIMAN.</strong>
+        </p>
+        <p class="text-sm" style="margin-top:8px;">
+          <strong>Saran:</strong> Diharapkan seluruh pegawai dapat berpartisipasi dalam penerapan ASPIRASI BMN serta memiliki kepedulian terhadap penggunaan dan pemeliharaan barang milik negara. Dukungan pimpinan juga diperlukan agar setiap laporan yang disampaikan dapat dievaluasi dan ditindaklanjuti sesuai ketentuan.
+        </p>
+      </div>
+    </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL KONFIRMASI PENGIRIMAN (STEP 6 DOKUMEN) -->
+  <div id="modal-konfirmasi" class="modal-backdrop no-print" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-check">✓</div>
+      <h3>Laporan berhasil dikirim!</h3>
+      <p>ASPIRASI BMN Lapas Kelas III Enemawira</p>
+      <div class="modal-detail-box">
+        <div class="md-row"><span>Kode Laporan :</span> <strong id="mk-kode">#LB-004</strong></div>
+        <div class="md-row"><span>Tanggal :</span> <strong id="mk-tanggal">-</strong></div>
+        <div class="md-row"><span>Ruangan :</span> <strong id="mk-lokasi">-</strong></div>
+        <div class="md-row"><span>Barang :</span> <strong id="mk-barang">-</strong></div>
+        <div class="md-row"><span>Status :</span> <span class="badge-baru">Baru diterima</span></div>
+      </div>
+      <div id="mk-foto-wrap" style="display:none; margin-bottom:14px;">
+        <span style="display:block; font-size:11.5px; color:#475569; margin-bottom:4px;">📷 Bukti Foto Terlampir:</span>
+        <img id="mk-foto-img" src="" alt="Bukti Foto" style="max-height:140px; border-radius:8px; border:1px solid #CBD5E1;" />
+      </div>
+      <p style="font-size:12.5px; color:#475569; margin-bottom:16px;">Data laporan telah masuk ke Google Sheets dan siap diperiksa oleh Pengelola BMN.</p>
+      <div id="mk-action-buttons" style="display:flex; gap:10px; justify-content:center;">
+        <button class="btn-outline-dark" onclick="tutupModalKonfirmasi()">Tutup / Kirim Laporan Lain</button>
+        <button id="btn-mk-lihat-sheet" class="btn-purple" onclick="tutupDanBukaSheet()">Lihat di Rekap Google Sheets →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VERIFIKASI LAPANGAN & TINDAK LANJUT PENGELOLA BMN -->
+  <div id="modal-verifikasi" class="modal-backdrop no-print" style="display:none;">
+    <div class="modal-box" style="max-width:540px; text-align:left;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 id="mv-title">Verifikasi Lapangan &amp; Tindak Lanjut BMN</h3>
+        <button onclick="tutupModalVerifikasi()" style="background:none;border:none;font-size:22px;cursor:pointer;">×</button>
+      </div>
+      <form onsubmit="simpanVerifikasiBMN(event)">
+        <input type="hidden" id="mv-id" />
+        <div id="mv-ringkasan" class="mv-summary"></div>
+
+        <div class="mv-field">
+          <label>Status Laporan (5 Status Resmi ASPIRASI BMN) *</label>
+          <select id="mv-status" required>
+            <option value="Baru diterima">Baru diterima</option>
+            <option value="Dalam verifikasi">Dalam verifikasi</option>
+            <option value="Dalam proses tindak lanjut">Dalam proses tindak lanjut</option>
+            <option value="Menunggu persetujuan atau anggaran">Menunggu persetujuan atau anggaran</option>
+            <option value="Selesai ditindaklanjuti">Selesai ditindaklanjuti</option>
+          </select>
+        </div>
+
+        <div class="mv-field">
+          <label>Penentuan Skala Prioritas / Tingkat Urgensi *</label>
+          <select id="mv-urgensi" required>
+            <option value="Rendah">Rendah</option>
+            <option value="Sedang">Sedang</option>
+            <option value="Tinggi">Tinggi</option>
+          </select>
+        </div>
+
+        <div class="mv-field">
+          <label>Hasil Verifikasi Lapangan (Pemeriksaan Langsung Pengelola BMN)</label>
+          <textarea id="mv-verifikasi" rows="2" placeholder="Contoh: Pengelola BMN telah memeriksa kondisi barang di ruangan..."></textarea>
+        </div>
+
+        <div class="mv-field">
+          <label>Rekomendasi Tindak Lanjut / Koordinasi Pimpinan</label>
+          <textarea id="mv-rekomendasi" rows="2" placeholder="Contoh: Diajukan perbaikan teknisi / menunggu persetujuan anggaran pimpinan..."></textarea>
+        </div>
+
+        <div class="mv-field">
+          <label>Dokumentasi Foto Tindak Lanjut (Opsional)</label>
+          <input type="file" id="mv-foto-input" accept="image/*" onchange="handleVerifikasiFoto(event)" />
+          <div id="mv-foto-preview-box" style="display:none; margin-top:8px;">
+            <img id="mv-foto-preview-img" src="" alt="Preview Tindak Lanjut" style="max-height:120px; border-radius:8px; border:1px solid #CBD5E1;" />
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top:16px;">
+          <button type="button" class="btn-danger-sm" onclick="hapusLaporanBMN()">Hapus Baris</button>
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="btn-outline-dark" onclick="tutupModalVerifikasi()">Batal</button>
+            <button type="submit" class="btn-purple">Simpan ke Google Sheets</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-box" class="toast-box no-print"></div>
+
+  <!-- MODAL PREVIEW GAMBAR UKURAN PENUH (LIGHTBOX) -->
+  <div id="modal-image-lightbox" class="modal-backdrop no-print" style="display:none;" onclick="tutupPreviewGambar()">
+    <div style="max-width:860px; max-height:90vh; background:#FFFFFF; padding:14px; border-radius:14px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,0.4);" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <strong id="lightbox-caption" style="font-size:14px; color:#0F172A;">Dokumentasi Foto Laporan BMN</strong>
+        <button onclick="tutupPreviewGambar()" style="background:none;border:none;font-size:24px;cursor:pointer;line-height:1;">×</button>
+      </div>
+      <img id="lightbox-img" src="" alt="Dokumentasi Foto" style="max-width:100%; max-height:76vh; border-radius:8px; object-fit:contain;" />
+    </div>
+  </div>
+
+  <!-- MODAL GENERATOR OTOMATIS GOOGLE FORM & GOOGLE SHEETS ASLI (GOOGLE APPS SCRIPT) -->
+  <div id="modal-google-generator" class="modal-backdrop no-print" style="display:none;">
+    <div class="modal-box" style="max-width:740px; text-align:left; max-height:92vh; overflow-y:auto;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <h3 style="color:#4C1D95;">⚡ Pembuat Otomatis Template Form Asli + Upload Foto + Google Sheets</h3>
+        <button onclick="tutupModalAutoCreateGoogle()" style="background:none;border:none;font-size:24px;cursor:pointer;">×</button>
+      </div>
+      <p style="font-size:13px; color:#334155; margin-bottom:12px;">
+        Script di bawah ini akan membuat <strong>Web App Formulir ASPIRASI BMN di akun Google Anda</strong> dengan <strong>desain template yang 100% SAMA PERSIS dengan form di sistem ini</strong> (lengkap dengan Header Logo Kementerian Imigrasi &amp; Pemasyarakatan, 9 Ruangan, <strong>Tombol Upload Foto Kamera/Galeri</strong>, dan otomatis masuk ke <strong>Google Sheets</strong> + simpan foto di <strong>Google Drive</strong> Anda):
+      </p>
+
+      <ol style="font-size:12.5px; color:#1E293B; padding-left:18px; margin-bottom:12px; line-height:1.6;">
+        <li>Buka <a href="https://script.google.com/home/start" target="_blank" style="color:#2563EB;font-weight:700;">script.google.com</a> → klik <strong>Proyek Baru (New Project)</strong>.</li>
+        <li>Hapus semua isi di `Code.gs`, lalu klik tombol <strong>"📋 Salin Kode Script Template Sama Persis"</strong> di bawah ini dan Paste ke `Code.gs`.</li>
+        <li>Klik tombol <strong>Jalankan (▷ Run)</strong> pada fungsi `setupDatabaseAwal` satu kali untuk membuat Google Sheets &amp; memberi izin akses.</li>
+        <li>Klik tombol biru <strong>Terapkan (Deploy)</strong> di kanan atas → pilih <strong>Deployment baru (New deployment)</strong>:
+          <ul style="margin:4px 0 4px 16px;">
+            <li>Pilih jenis (ikon roda gigi ⚙️): <strong>Aplikasi Web (Web app)</strong></li>
+            <li>Jalankan sebagai (Execute as): <strong>Saya (Me)</strong></li>
+            <li>Siapa yang memiliki akses (Who has access): <strong>Siapa saja (Anyone)</strong></li>
+            <li>Klik <strong>Terapkan (Deploy)</strong> → Salin <strong>URL Aplikasi Web (`https://script.google.com/macros/s/.../exec`)</strong>.</li>
+          </ul>
+        </li>
+        <li>Tempelkan <strong>URL Aplikasi Web</strong> tersebut ke kotak <strong>Mode 2: Link Google Form Cloud</strong> di sistem ini! Sekarang saat QR di-scan dari HP mana saja dan jaringan mana saja, tampilannya <strong>100% sama persis dengan template sistem ini</strong> dan langsung bisa upload foto ke Google Sheets!</li>
+      </ol>
+
+      <div style="position:relative;">
+        <textarea id="gas-script-code" readonly rows="12" style="width:100%; font-family:monospace; font-size:11px; padding:12px; background:#0F172A; color:#F8FAFC; border-radius:8px; border:1px solid #334155;">// ============================================================================
+// GOOGLE APPS SCRIPT: TEMPLATE FORM ASPIRASI BMN SAMA PERSIS + UPLOAD FOTO + SHEETS
+// ============================================================================
+var PROP = PropertiesService.getScriptProperties();
+
+function setupDatabaseAwal() {
+  var ss = getOrCreateSheet();
+  var folder = getOrCreateFolder();
+  Logger.log("=== DATABASE SIAP DIGUNAKAN ===");
+  Logger.log("LINK GOOGLE SHEETS REKAPITULASI: " + ss.getUrl());
+  Logger.log("LINK FOLDER FOTO DRIVE: " + folder.getUrl());
+  Logger.log("Selanjutnya klik tombol 'Terapkan (Deploy)' -> 'Deployment baru' -> 'Aplikasi Web' -> Akses: 'Siapa saja (Anyone)'");
+}
+
+function getOrCreateSheet() {
+  var id = PROP.getProperty("SHEET_ID");
+  if (id) {
+    try { return SpreadsheetApp.openById(id); } catch (e) {}
+  }
+  var ss = SpreadsheetApp.create("Rekapitulasi ASPIRASI BMN - Lapas Kelas III Enemawira");
+  var sh = ss.getActiveSheet();
+  sh.setName("Laporan BMN");
+  sh.appendRow([
+    "No", "Kode Laporan", "Waktu Input", "Tanggal Pelaporan", "Nama Pelapor",
+    "Lokasi atau Ruangan", "Jenis Laporan", "Tingkat Urgensi", "Nama Barang",
+    "Kondisi Barang", "Uraian Permasalahan", "Saran / Usulan", "Link Foto Bukti", "Status Laporan"
+  ]);
+  sh.getRange("A1:N1").setBackground("#0F2D59").setFontColor("#FFFFFF").setFontWeight("bold");
+  PROP.setProperty("SHEET_ID", ss.getId());
+  return ss;
+}
+
+function getOrCreateFolder() {
+  var id = PROP.getProperty("FOLDER_ID");
+  if (id) {
+    try { return DriveApp.getFolderById(id); } catch (e) {}
+  }
+  var folder = DriveApp.createFolder("Foto Bukti ASPIRASI BMN - Lapas Enemawira");
+  folder.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  PROP.setProperty("FOLDER_ID", folder.getId());
+  return folder;
+}
+
+function doGet(e) {
+  return HtmlService.createHtmlOutput(getTemplateHtml())
+    .setTitle("ASPIRASI BMN - Lapas Kelas III Enemawira")
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+    .addMetaTag("viewport", "width=device-width, initial-scale=1");
+}
+
+function simpanLaporanBMN(data) {
+  var ss = getOrCreateSheet();
+  var sh = ss.getActiveSheet();
+  var nextNo = Math.max(sh.getLastRow(), 1);
+  var kode = "LB-" + ("000" + nextNo).slice(-3);
+  var fotoUrl = "-";
+
+  if (data.fotoBase64 && data.fotoBase64.indexOf("base64,") !== -1) {
+    var parts = data.fotoBase64.split("base64,");
+    var contentType = parts[0].replace("data:", "").replace(";", "");
+    var bytes = Utilities.base64Decode(parts[1]);
+    var blob = Utilities.newBlob(bytes, contentType, kode + "_" + (data.namaBarang || "BMN") + ".jpg");
+    var folder = getOrCreateFolder();
+    var file = folder.createFile(blob);
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    fotoUrl = file.getUrl();
+  }
+
+  sh.appendRow([
+    nextNo,
+    "#" + kode,
+    Utilities.formatDate(new Date(), "GMT+8", "dd/MM/yyyy HH:mm"),
+    data.tanggal,
+    data.namaPelapor,
+    data.lokasi,
+    data.jenisLaporan,
+    data.tingkatUrgensi,
+    data.namaBarang,
+    data.kondisiBarang,
+    data.uraian,
+    data.saranUsulan || "-",
+    fotoUrl,
+    "Baru diterima"
+  ]);
+
+  return { success: true, kode: kode, fotoUrl: fotoUrl, sheetUrl: ss.getUrl() };
+}
+
+function getTemplateHtml() {
+  return `<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ASPIRASI BMN Lapas Kelas III Enemawira</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F0EBF8; font-family: 'Roboto', sans-serif; color: #202124; padding: 20px 14px 60px; }
+  .wrap { max-width: 740px; margin: 0 auto; }
+  .card { background: #FFF; border-radius: 8px; border: 1px solid #DADCE0; padding: 22px 24px; margin-bottom: 12px; }
+  .banner-card { background: #FFF; border-radius: 8px; border: 1px solid #DADCE0; overflow: hidden; margin-bottom: 12px; }
+  .purple-cap { height: 10px; background: #673AB7; }
+  .banner-visual { background: linear-gradient(90deg, #0F2D59 0%, #1E40AF 55%, #E2E8F0 100%); padding: 20px 24px; color: #FFF; display: flex; align-items: center; gap: 14px; }
+  .logo-badge { width: 62px; height: 62px; border-radius: 50%; background: #0A1E3C; border: 2px solid #FBBF24; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+  .banner-visual strong { display: block; font-size: 12.5px; letter-spacing: 0.04em; }
+  .banner-visual span { font-size: 17px; font-weight: 700; color: #FDE68A; }
+  .title-block { padding: 22px 24px; }
+  .title-block h2 { font-size: 21px; font-weight: 500; margin-bottom: 8px; }
+  .title-block p { font-size: 14px; color: #5F6368; }
+  .req { color: #D93025; }
+  .lbl { display: block; font-size: 15px; font-weight: 500; margin-bottom: 14px; }
+  .input-line, textarea { width: 100%; border: none; border-bottom: 1px solid #DADCE0; padding: 8px 0; font-size: 14px; font-family: inherit; }
+  .input-line:focus, textarea:focus { outline: none; border-bottom: 2px solid #673AB7; }
+  .input-short, select { padding: 9px 12px; border: 1px solid #DADCE0; border-radius: 4px; font-size: 14px; min-width: 240px; }
+  .split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .radio-list { display: flex; flex-direction: column; gap: 10px; }
+  .radio-item { display: flex; align-items: center; gap: 10px; font-size: 14px; cursor: pointer; }
+  .radio-item input { accent-color: #673AB7; width: 18px; height: 18px; }
+  .dropzone { border: 2px dashed #C4B5FD; border-radius: 12px; padding: 18px; background: #FAF5FF; cursor: pointer; text-align: center; }
+  .dropzone:hover { border-color: #673AB7; background: #F3E8FF; }
+  .btn-add-file { display: inline-block; margin-top: 8px; padding: 8px 16px; border: 1px solid #DADCE0; border-radius: 6px; background: #FFF; color: #1A73E8; font-weight: 600; font-size: 13.5px; }
+  .submit-row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+  .btn-submit { background: #673AB7; color: #FFF; border: none; padding: 11px 28px; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .btn-reset { background: none; border: none; color: #673AB7; font-size: 14px; font-weight: 500; cursor: pointer; }
+  @media (max-width: 640px) { .split-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner-card">
+    <div class="purple-cap"></div>
+    <div class="banner-visual">
+      <img src="data:image/jpeg;base64,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" style="width:64px;height:64px;border-radius:50%;border:2px solid #FBBF24;object-fit:cover;flex-shrink:0;"/>
+      <div>
+        <strong>KEMENTERIAN IMIGRASI DAN PEMASYARAKATAN REPUBLIK INDONESIA</strong>
+        <span>LEMBAGA PEMASYARAKATAN KELAS III ENEMAWIRA</span>
+      </div>
+    </div>
+    <div class="title-block">
+      <h2>ASPIRASI BMN Lapas Kelas III Enemawira (Formulir Aspirasi dan Pelaporan Sarana Prasarana)</h2>
+      <p>Sampaikan aspirasi dan pelaporan kondisi sarana prasarana BMN Lapas Kelas III Enemawira melalui formulir ini. Kolom dengan tanda <span class="req">*</span> wajib diisi.</p>
+    </div>
+  </div>
+
+  <form id="f" onsubmit="kirim(event)">
+    <div class="card">
+      <label class="lbl">Tanggal Pelaporan <span class="req">*</span></label>
+      <input type="date" id="tanggal" class="input-short" required />
+    </div>
+    <div class="card">
+      <label class="lbl">Nama Pelapor <span class="req">*</span></label>
+      <input type="text" id="nama" class="input-line" placeholder="Teks jawaban singkat" required />
+    </div>
+    <div class="card">
+      <label class="lbl">Lokasi atau Ruangan <span class="req">*</span></label>
+      <select id="lokasi" required>
+        <option value="Ruangan Kalapas">Ruangan Kalapas</option>
+        <option value="Ruangan AO">Ruangan AO</option>
+        <option value="Ruangan TU">Ruangan TU</option>
+        <option value="Ruangan Pembinaan">Ruangan Pembinaan</option>
+        <option value="Ruangan Kamtib">Ruangan Kamtib</option>
+        <option value="Blok/Kamar Hunian">Blok/Kamar Hunian</option>
+        <option value="Dapur">Dapur</option>
+        <option value="Area Penjagaan">Area Penjagaan</option>
+        <option value="Dapur dan WC">Dapur dan WC</option>
+      </select>
+    </div>
+
+    <div class="split-2">
+      <div class="card">
+        <label class="lbl">Jenis Laporan <span class="req">*</span></label>
+        <div class="radio-list">
+          <label class="radio-item"><input type="radio" name="jenis" value="Kerusakan barang" checked/> <span>Kerusakan barang</span></label>
+          <label class="radio-item"><input type="radio" name="jenis" value="Kebutuhan fasilitas"/> <span>Kebutuhan fasilitas</span></label>
+          <label class="radio-item"><input type="radio" name="jenis" value="Pemeliharaan"/> <span>Pemeliharaan</span></label>
+          <label class="radio-item"><input type="radio" name="jenis" value="Penataan ruang"/> <span>Penataan ruang</span></label>
+          <label class="radio-item"><input type="radio" name="jenis" value="Usulan efisiensi"/> <span>Usulan efisiensi</span></label>
+          <label class="radio-item"><input type="radio" name="jenis" value="Kondisi fasilitas"/> <span>Kondisi fasilitas</span></label>
+        </div>
+      </div>
+      <div class="card">
+        <label class="lbl">Tingkat Urgensi <span class="req">*</span></label>
+        <div class="radio-list">
+          <label class="radio-item"><input type="radio" name="urgensi" value="Rendah"/> <span>Rendah</span></label>
+          <label class="radio-item"><input type="radio" name="urgensi" value="Sedang" checked/> <span>Sedang</span></label>
+          <label class="radio-item"><input type="radio" name="urgensi" value="Tinggi"/> <span>Tinggi</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <label class="lbl">Nama barang atau fasilitas <span class="req">*</span></label>
+      <input type="text" id="barang" class="input-line" placeholder="Contoh: Printer, AC, Meja, Komputer..." required />
+    </div>
+
+    <div class="card">
+      <label class="lbl">Kondisi barang <span class="req">*</span></label>
+      <div class="radio-list">
+        <label class="radio-item"><input type="radio" name="kondisi" value="Baik"/> <span>Baik</span></label>
+        <label class="radio-item"><input type="radio" name="kondisi" value="Rusak ringan" checked/> <span>Rusak ringan</span></label>
+        <label class="radio-item"><input type="radio" name="kondisi" value="Rusak berat"/> <span>Rusak berat</span></label>
+        <label class="radio-item"><input type="radio" name="kondisi" value="Tidak berfungsi"/> <span>Tidak berfungsi</span></label>
+        <label class="radio-item"><input type="radio" name="kondisi" value="Belum tersedia"/> <span>Belum tersedia</span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <label class="lbl">Unggah foto kondisi barang (Dokumentasi Bukti Laporan)</label>
+      <div class="dropzone" onclick="document.getElementById('foto').click()">
+        <input type="file" id="foto" accept="image/*" style="display:none" onchange="pilihFoto(event)"/>
+        <div id="ph">
+          <div style="font-size:28px;">📷</div>
+          <strong>Klik untuk Ambil Foto Kamera / Pilih Gambar dari Galeri</strong>
+          <div style="font-size:12px;color:#5F6368;margin-top:4px;">Format JPG, PNG (Bukti dokumentasi kerusakan barang)</div>
+          <span class="btn-add-file">📤 Tambahkan file (Add file)</span>
+        </div>
+        <div id="prev" style="display:none;">
+          <img id="prev-img" style="max-height:170px;border-radius:8px;border:1px solid #CBD5E1;"/>
+          <div id="prev-name" style="font-size:12.5px;color:#065F46;font-weight:700;margin-top:6px;"></div>
+        </div>
+      </div>
+    </div>
+
+      <div class="card">
+        <label class="lbl">Uraian aspirasi atau permasalahan <span class="req">*</span></label>
+        <input type="text" id="uraian" class="input-line" placeholder="Teks jawaban panjang" required />
+      </div>
+
+      <div class="card">
+        <label class="lbl">Saran atau usulan tindak lanjut</label>
+        <input type="text" id="saran" class="input-line" placeholder="Teks jawaban panjang" />
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn-submit" id="btn-kirim">Kirim</button>
+        <button type="reset" class="btn-reset" onclick="resetFoto()">Reset form</button>
+      </div>
+    </form>
+
+    <div id="sukses" class="card" style="display:none;text-align:center;padding:32px;">
+      <div style="font-size:44px;color:#16A34A;">✓</div>
+      <h2 style="margin:8px 0;">Laporan Berhasil Dikirim!</h2>
+      <p style="color:#5F6368;margin-bottom:14px;">Data laporan dan dokumentasi foto telah masuk otomatis ke Google Sheets Pengelola BMN.</p>
+      <div id="kode-box" style="font-size:18px;font-weight:700;color:#0F2D59;margin-bottom:16px;"></div>
+      <button class="btn-submit" onclick="location.reload()">Kirim Laporan Lainnya</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('tanggal').value = new Date().toISOString().slice(0, 10);
+    var fotoData = "";
+
+    function pilihFoto(e) {
+      var file = e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev) {
+        var img = new Image();
+        img.onload = function() {
+          var w = img.width, h = img.height, max = 1000;
+          if (w > max) { h = Math.round(h * max / w); w = max; }
+          var c = document.createElement('canvas');
+          c.width = w; c.height = h;
+          c.getContext('2d').drawImage(img, 0, 0, w, h);
+          fotoData = c.toDataURL('image/jpeg', 0.8);
+          document.getElementById('prev-img').src = fotoData;
+          document.getElementById('prev-name').textContent = "✓ " + file.name + " siap dikirim";
+          document.getElementById('ph').style.display = 'none';
+          document.getElementById('prev').style.display = 'block';
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetFoto() {
+      fotoData = "";
+      document.getElementById('ph').style.display = 'block';
+      document.getElementById('prev').style.display = 'none';
+    }
+
+    function kirim(e) {
+      e.preventDefault();
+      var btn = document.getElementById('btn-kirim');
+      btn.disabled = true;
+      btn.textContent = "Mengirim Laporan...";
+      var payload = {
+        tanggal: document.getElementById('tanggal').value,
+        namaPelapor: document.getElementById('nama').value,
+        lokasi: document.getElementById('lokasi').value,
+        jenisLaporan: document.querySelector('input[name="jenis"]:checked').value,
+        tingkatUrgensi: document.querySelector('input[name="urgensi"]:checked').value,
+        namaBarang: document.getElementById('barang').value,
+        kondisiBarang: document.querySelector('input[name="kondisi"]:checked').value,
+        uraian: document.getElementById('uraian').value,
+        saranUsulan: document.getElementById('saran').value,
+        fotoBase64: fotoData
+      };
+      google.script.run.withSuccessHandler(function(res) {
+        document.getElementById('f').style.display = 'none';
+        document.getElementById('sukses').style.display = 'block';
+        document.getElementById('kode-box').textContent = "Kode Laporan: #" + res.kode + " (Status: Baru diterima)";
+      }).simpanLaporanBMN(payload);
+    }
+  </script>
+</body>
+</html>`;
+}</textarea>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">
+        <button type="button" class="btn-outline-dark" onclick="tutupModalAutoCreateGoogle()">Tutup</button>
+        <button type="button" class="btn-purple" onclick="salinKodeAppsScript()">📋 Salin Kode Script Template Sama Persis</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/qrcode.min.js?v=6"></script>
+  <script src="/app.js?v=6"></script>
+</body>
+</html>
