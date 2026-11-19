@@ -6,16 +6,34 @@
   <title>ASPIRASI BMN Lapas Kelas III Enemawira (Formulir Aspirasi dan Pelaporan Sarana Prasarana)</title>
   <link rel="icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
   <link rel="shortcut icon" type="image/jpeg" href="/logo-kemenimipas.jpg?v=3" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: #F0EBF8;
-      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
       color: #202124;
       padding: 20px 14px 60px;
-      line-height: 1.5;
+      line-height: 1.55;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-rounded {
+      font-family: 'Material Symbols Rounded', sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      user-select: none;
+      flex-shrink: 0;
     }
     .gform-wrapper {
       max-width: 760px;
@@ -429,12 +447,12 @@
         <div class="gf-upload-dropzone" onclick="document.getElementById('gf-foto-input').click()">
           <input type="file" id="gf-foto-input" accept="image/*" style="display:none" onchange="handlePhoto(event)" />
           <div id="gf-upload-placeholder" class="gf-upload-placeholder">
-            <div class="gf-upload-icon">📷</div>
+            <div class="gf-upload-icon"><span class="material-symbols-rounded" style="font-size:32px; color:#673AB7;">add_a_photo</span></div>
             <div>
               <strong>Klik untuk Ambil Foto Kamera / Pilih Gambar dari Galeri</strong>
               <span class="gf-file-name">Format JPG, PNG, WEBP (Otomatis dikompresi agar cepat terkirim)</span>
             </div>
-            <span class="gf-add-file-btn">📤 Tambahkan file (Add file)</span>
+            <span class="gf-add-file-btn" style="display:inline-flex; align-items:center; gap:6px;"><span class="material-symbols-rounded" style="font-size:17px;">upload_file</span> Tambahkan file (Add file)</span>
           </div>
 
           <div id="gf-foto-preview-box" class="gf-preview-container" style="display:none;" onclick="event.stopPropagation()">
@@ -442,8 +460,8 @@
             <div class="gf-preview-meta">
               <span id="gf-preview-caption">Foto siap dikirim bersama laporan</span>
               <div style="display:flex; gap:8px;">
-                <button type="button" class="btn-mini" onclick="document.getElementById('gf-foto-input').click()">🔄 Ganti Foto</button>
-                <button type="button" class="btn-danger-sm" onclick="clearPhoto()">🗑️ Hapus Foto</button>
+                <button type="button" class="btn-mini" onclick="document.getElementById('gf-foto-input').click()"><span class="material-symbols-rounded" style="font-size:14px;">sync</span> Ganti Foto</button>
+                <button type="button" class="btn-danger-sm" onclick="clearPhoto()"><span class="material-symbols-rounded" style="font-size:14px;">delete</span> Hapus Foto</button>
               </div>
             </div>
           </div>
@@ -464,7 +482,7 @@
 
       <!-- TOMBOL KIRIM & RESET FORM -->
       <div class="gform-submit-row">
-        <button type="submit" class="gf-btn-submit" id="gf-btn-kirim">Kirim</button>
+        <button type="submit" class="gf-btn-submit" id="gf-btn-kirim" style="display:inline-flex; align-items:center; gap:6px;"><span class="material-symbols-rounded" style="font-size:16px;">send</span> Kirim</button>
         <button type="button" class="gf-btn-reset" onclick="resetForm()">Reset form</button>
       </div>
     </form>
@@ -473,7 +491,7 @@
   <!-- MODAL KONFIRMASI PENGIRIMAN -->
   <div id="modal-konfirmasi" class="modal-backdrop" style="display:none;">
     <div class="modal-box">
-      <div class="modal-check">✓</div>
+      <div class="modal-check"><span class="material-symbols-rounded" style="font-size:42px; color:#16A34A;">check_circle</span></div>
       <h3>Laporan berhasil dikirim!</h3>
       <p style="font-size:13px;color:#64748B;">ASPIRASI BMN Lapas Kelas III Enemawira</p>
       <div class="modal-detail-box">
@@ -481,10 +499,10 @@
         <div class="md-row"><span>Tanggal :</span> <strong id="mk-tanggal">-</strong></div>
         <div class="md-row"><span>Ruangan :</span> <strong id="mk-lokasi">-</strong></div>
         <div class="md-row"><span>Barang :</span> <strong id="mk-barang">-</strong></div>
-        <div class="md-row"><span>Status :</span> <span class="badge-baru">Baru diterima</span></div>
+        <div class="md-row"><span>Status :</span> <span class="badge-baru"><span class="material-symbols-rounded" style="font-size:13px">inbox</span> Baru diterima</span></div>
       </div>
       <div id="mk-foto-wrap" style="display:none; margin-bottom:14px;">
-        <span style="display:block; font-size:11.5px; color:#475569; margin-bottom:4px;">📷 Bukti Foto Terlampir:</span>
+        <span style="display:inline-flex; align-items:center; gap:4px; font-size:11.5px; color:#475569; margin-bottom:4px;"><span class="material-symbols-rounded" style="font-size:15px">image</span> Bukti Foto Terlampir:</span>
         <img id="mk-foto-img" src="" alt="Bukti Foto" style="max-height:140px; border-radius:8px; border:1px solid #CBD5E1;" />
       </div>
       <p style="font-size:12.5px; color:#475569; margin-bottom:16px;">Data laporan dan dokumentasi foto Anda telah masuk ke Google Sheets Pengelola BMN.</p>

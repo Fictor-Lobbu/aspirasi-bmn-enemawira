@@ -25,11 +25,40 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background: #F4F6F9;
   color: var(--slate-900);
-  line-height: 1.5;
+  line-height: 1.55;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* GOOGLE MATERIAL SYMBOLS ROUNDED — MODERN USER FRIENDLY ICONS */
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  flex-shrink: 0;
 }
 
 .container {
@@ -368,24 +397,28 @@ body.sidebar-collapsed .app-sidebar {
 }
 
 .sni-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: #F1F5F9;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #EFF6FF;
+  color: #1E40AF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
   flex-shrink: 0;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease, color 0.2s ease;
 }
 
 .side-nav-item:hover .sni-icon {
   transform: scale(1.08);
+  background: #DBEAFE;
+  color: #1E3A8A;
 }
 
 .side-nav-item.active .sni-icon {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
 }
 
 .sni-text {
@@ -1431,6 +1464,17 @@ body.sidebar-collapsed .app-sidebar {
   font-weight: 700;
   font-size: 12.5px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.btn-sheet:hover {
+  background: #F0FDF4;
+  transform: translateY(-1px);
 }
 
 .btn-sheet-outline {
@@ -1442,6 +1486,15 @@ body.sidebar-collapsed .app-sidebar {
   font-weight: 600;
   font-size: 12.5px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-sheet-outline:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .status-legend-bar {
@@ -1540,11 +1593,32 @@ body.sidebar-collapsed .app-sidebar {
 }
 
 /* BADGES & BUTTONS */
-.badge-baru { background: #DBEAFE; color: #1E40AF; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
-.badge-verif { background: #FEF3C7; color: #92400E; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
-.badge-proses { background: #E0E7FF; color: #3730A3; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
-.badge-anggaran { background: #FCE7F3; color: #9D174D; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
-.badge-done { background: #DCFCE7; color: #166534; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
+.badge-baru { background: #DBEAFE; color: #1E40AF; padding: 4px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+.badge-verif { background: #FEF3C7; color: #92400E; padding: 4px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+.badge-proses { background: #E0E7FF; color: #3730A3; padding: 4px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+.badge-anggaran { background: #FCE7F3; color: #9D174D; padding: 4px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+.badge-done { background: #DCFCE7; color: #166534; padding: 4px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+
+.btn-mini {
+  background: #EFF6FF;
+  color: var(--doc-blue);
+  border: 1px solid #BFDBFE;
+  padding: 6px 11px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.btn-mini:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+}
 
 .btn-purple {
   background: var(--gf-purple);

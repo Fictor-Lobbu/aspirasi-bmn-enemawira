@@ -716,7 +716,7 @@ function renderSheetsTables() {
             ${r.fotoBarang
               ? `<div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
                   <img src="${escapeHtml(r.fotoBarang)}" alt="Foto Barang" style="height:48px;width:64px;object-fit:cover;border-radius:6px;border:1px solid #CBD5E1;cursor:pointer;" onclick="bukaPreviewGambar('${escapeHtml(r.fotoBarang)}', 'Foto Laporan #${escapeHtml(r.id)} — ${escapeHtml(r.namaBarang)} (${escapeHtml(r.lokasi)})')" title="Klik untuk memperbesar foto" />
-                  <button type="button" class="btn-mini" style="padding:2px 6px;font-size:10.5px;" onclick="bukaPreviewGambar('${escapeHtml(r.fotoBarang)}', 'Foto Laporan #${escapeHtml(r.id)} — ${escapeHtml(r.namaBarang)} (${escapeHtml(r.lokasi)})')">🔍 Lihat</button>
+                  <button type="button" class="btn-mini" style="padding:2px 7px;font-size:11px;" onclick="bukaPreviewGambar('${escapeHtml(r.fotoBarang)}', 'Foto Laporan #${escapeHtml(r.id)} — ${escapeHtml(r.namaBarang)} (${escapeHtml(r.lokasi)})')"><span class="material-symbols-rounded" style="font-size:13px">visibility</span> Lihat</button>
                  </div>`
               : '<span style="color:#94A3B8;">-</span>'}
           </td>
@@ -729,7 +729,7 @@ function renderSheetsTables() {
           </td>
           <td>
             <button class="btn-mini" onclick="bukaModalVerifikasi('${escapeHtml(r.id)}')">
-              ✏️ Verifikasi &amp; Status
+              <span class="material-symbols-rounded" style="font-size:14px">fact_check</span> Verifikasi &amp; Status
             </button>
           </td>
         </tr>
@@ -1004,11 +1004,35 @@ function exportSpreadsheetCSV(event) {
 // HELPERS
 function renderStatusBadge(status) {
   let cls = 'badge-baru';
-  if (status === 'Dalam verifikasi') cls = 'badge-verif';
-  else if (status === 'Dalam proses tindak lanjut') cls = 'badge-proses';
-  else if (status === 'Menunggu persetujuan atau anggaran') cls = 'badge-anggaran';
-  else if (status === 'Selesai ditindaklanjuti') cls = 'badge-done';
-  return `<span class="${cls}">${escapeHtml(status)}</span>`;
+  let icon = 'inbox';
+  if (status === 'Dalam verifikasi') { cls = 'badge-verif'; icon = 'search'; }
+  else if (status === 'Dalam proses tindak lanjut') { cls = 'badge-proses'; icon = 'build'; }
+  else if (status === 'Menunggu persetujuan atau anggaran') { cls = 'badge-anggaran'; icon = 'pending_actions'; }
+  else if (status === 'Selesai ditindaklanjuti') { cls = 'badge-done'; icon = 'task_alt'; }
+  return `<span class="${cls}"><span class="material-symbols-rounded" style="font-size:13px">${icon}</span> ${escapeHtml(status)}</span>`;
+}
+
+function unduhGambarQR() {
+  const mainBox = document.getElementById('main-qr-code-box');
+  const canvas = mainBox ? mainBox.querySelector('canvas') : null;
+  const img = mainBox ? mainBox.querySelector('img') : null;
+  let dataUrl = '';
+  if (canvas) {
+    dataUrl = canvas.toDataURL('image/png');
+  } else if (img && img.src) {
+    dataUrl = img.src;
+  }
+  if (!dataUrl) {
+    showToast("QR Code belum siap untuk diunduh");
+    return;
+  }
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = 'Poster_QR_ASPIRASI_BMN_Lapas_Enemawira.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast("Gambar Poster QR Code (PNG) berhasil diunduh!");
 }
 
 function formatTglIndo(d) {
