@@ -234,16 +234,11 @@ function syncGoogleSettingsUI() {
 
   const qrInput = document.getElementById('qr-custom-url-input');
   if (qrInput) {
-    if (mode === 'external') {
-      if (effectiveExternalUrl) {
-        qrInput.value = effectiveExternalUrl;
-      } else {
-        aktifkanTunnelPublik();
-      }
-    } else {
-      const defaultBase = state.network && state.network.lanUrl ? state.network.lanUrl : window.location.origin;
-      qrInput.value = `${defaultBase}/form`;
-    }
+    const isCloud = !window.location.hostname.match(/^(localhost|127\.0\.0\.1|\d+\.\d+\.\d+\.\d+)$/);
+    const defaultBase = isCloud
+      ? window.location.origin
+      : (state.network && state.network.lanUrl ? state.network.lanUrl : window.location.origin);
+    qrInput.value = `${defaultBase}/form`;
   }
 }
 

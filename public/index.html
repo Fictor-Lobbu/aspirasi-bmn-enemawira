@@ -262,7 +262,6 @@
             <span class="doc-chip">BAGIAN 2: CARA KERJA INOVASI</span>
             <h3>Cara Kerja Pelaporan dengan Kode QR (6 Langkah Interaktif) &amp; Poster QR Code</h3>
           </div>
-          <button class="btn-purple" onclick="window.print()">🖨️ Cetak Poster QR Code ASPIRASI BMN</button>
         </div>
 
         <!-- 6 STEP BAR VISUAL PERSIS GAMBAR DOKUMEN -->
@@ -427,52 +426,18 @@
 
           <!-- ALUR PELAKSANAAN 7 TAHAP & POSTER QR CODE UTAMA -->
           <div class="alur-and-poster-col">
-            <!-- PANEL PENGATURAN TARGET QR CODE & INTEGRASI GOOGLE FORM / GOOGLE SHEETS -->
-            <div class="card-box no-print" style="margin-bottom:16px; border:1.5px solid #C4B5FD; background:linear-gradient(135deg,#FFFFFF 0%,#F5F3FF 100%);">
-              <div class="card-title-row" style="margin-bottom:8px;">
-                <h4 style="color:#4C1D95;">⚙️ Pengaturan Tujuan Scan QR Code (Google Form &amp; Google Sheets)</h4>
-                <span class="sub-tag" style="background:#EDE9FE;color:#5B21B6;">Fleksibel 2 Mode</span>
+            <!-- PANEL INFO QR CODE ONLINE -->
+            <div class="card-box no-print" style="margin-bottom:16px; border:1.5px solid #BFDBFE; background:linear-gradient(135deg,#FFFFFF 0%,#EFF6FF 100%);">
+              <div class="card-title-row" style="margin-bottom:6px;">
+                <h4 style="color:#1E3A8A; display:inline-flex; align-items:center; gap:6px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Akses QR Code Formulir Online (Aktif 24 Jam)
+                </h4>
+                <span class="sub-tag" style="background:#DCFCE7;color:#166534;">Online</span>
               </div>
-              <p class="text-sm" style="margin-bottom:12px;">
-                Pilih ke mana pegawai akan diarahkan saat melakukan <strong>Scan QR Code</strong> dari HP mereka:
+              <p class="text-sm" style="margin:0; color:#334155;">
+                Sistem sudah online. Scan QR Code di bawah menggunakan kamera HP dari jaringan mana pun (Wi-Fi maupun Data Seluler) untuk langsung membuka <strong>Formulir Pelaporan ASPIRASI BMN</strong> dan otomatis masuk ke <strong>Google Sheets</strong>.
               </p>
-
-              <div class="qr-mode-switch" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
-                <label class="qr-mode-card" id="label-mode-internal" style="padding:10px 12px; border:2px solid #673AB7; border-radius:10px; background:#FFFFFF; cursor:pointer; display:flex; gap:8px; align-items:flex-start;">
-                  <input type="radio" name="qrTargetMode" value="internal" checked onchange="changeQrMode('internal')" style="margin-top:3px; accent-color:#673AB7;" />
-                  <div>
-                    <strong style="font-size:12.5px; display:block; color:#1E293B;">Mode 1: Form Sistem (Wi-Fi / Hotspot Sama)</strong>
-                    <span style="font-size:11px; color:#64748B;">Scan QR langsung membuka <code>http://10.188.57.127:3000/form</code> (Tampilan Form seperti screenshot Anda) untuk HP di Wi-Fi yang sama.</span>
-                  </div>
-                </label>
-
-                <label class="qr-mode-card" id="label-mode-external" style="padding:10px 12px; border:2px solid #CBD5E1; border-radius:10px; background:#FFFFFF; cursor:pointer; display:flex; gap:8px; align-items:flex-start;">
-                  <input type="radio" name="qrTargetMode" value="external" onchange="changeQrMode('external')" style="margin-top:3px; accent-color:#673AB7;" />
-                  <div>
-                    <strong style="font-size:12.5px; display:block; color:#1E293B;">Mode 2: Form Sama Persis (Beda Jaringan / Data Seluler)</strong>
-                    <span style="font-size:11px; color:#64748B;">Membuka halaman <code>/form</code> yang <strong>100% SAMA dengan Mode 1</strong> melalui Link Internet Publik agar bisa di-scan dari HP mana pun yang berbeda jaringan.</span>
-                  </div>
-                </label>
-              </div>
-
-              <!-- PANEL MODE 2: FORMAT SAMA PERSIS MODE 1 UNTUK BEDA JARINGAN -->
-              <div id="external-google-config" style="display:none; background:#FFFFFF; padding:12px; border-radius:10px; border:1px solid #DDD6FE; margin-bottom:10px;">
-                <div style="background:#EFF6FF; border:1px solid #BFDBFE; padding:10px 12px; border-radius:8px; margin-bottom:10px; font-size:12px; color:#1E3A8A;">
-                  <strong>🌐 Status Link Internet Publik (Format Form 100% Sama dengan Mode 1):</strong>
-                  <div id="tunnel-status-text" style="margin-top:4px; font-weight:700; color:#0F2D59;">Mendeteksi link internet publik otomatis...</div>
-                </div>
-                <div style="margin-bottom:8px;">
-                  <label style="font-size:12px; font-weight:700; color:#334155; display:block; margin-bottom:4px;">🔗 Link Publik Form Mode 2 (Otomatis mengarah ke `/form` yang sama persis dengan Mode 1):</label>
-                  <div style="display:flex; gap:6px;">
-                    <input type="url" id="input-google-form-url" placeholder="https://....lhr.life/form (Otomatis terisi saat tunnel aktif)" style="flex:1; padding:8px 10px; border:1px solid #CBD5E1; border-radius:6px; font-size:12.5px;" oninput="onExternalGoogleUrlInput()" />
-                    <button type="button" class="btn-mini" onclick="aktifkanTunnelPublik()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg> Buat Link Publik Otomatis</button>
-                  </div>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-top:8px;">
-                  <span style="font-size:11.5px; color:#475569;">Semua laporan &amp; foto dari Mode 2 juga langsung masuk otomatis ke <strong>4. Google Sheets</strong> di sistem ini.</span>
-                  <button type="button" class="btn-purple" style="padding:7px 14px; font-size:12px; display:inline-flex; align-items:center; gap:5px;" onclick="saveGoogleIntegrationSettings()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Gunakan Link Ini di QR Code</button>
-                </div>
-              </div>
             </div>
 
             <div class="poster-qr-card" id="printable-qr-poster">
