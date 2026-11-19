@@ -39,28 +39,6 @@ button, input, select, textarea {
   font-family: inherit;
 }
 
-/* GOOGLE MATERIAL SYMBOLS ROUNDED — MODERN USER FRIENDLY ICONS */
-.material-symbols-rounded {
-  font-family: 'Material Symbols Rounded', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  user-select: none;
-  flex-shrink: 0;
-}
-
 .container {
   max-width: 1240px;
   margin: 0 auto;
