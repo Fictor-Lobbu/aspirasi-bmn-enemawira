@@ -679,15 +679,16 @@ function renderSheetsTables() {
     return matchStatus && matchQ;
   });
 
-  // 1. Render Tabel Contoh Format Rekapitulasi Laporan (5 Kolom: NO, TANGGAL, BARANG, PERMASALAHAN, STATUS)
+  // 1. Render Tabel Contoh Format Rekapitulasi Laporan (6 Kolom: NO, TANGGAL, RUANGAN, BARANG, PERMASALAHAN, STATUS)
   if (ringkasTbody) {
     if (filtered.length === 0) {
-      ringkasTbody.innerHTML = `<tr><td colspan="5" style="text-align:center;color:#64748B;">Belum ada data laporan pada filter ini.</td></tr>`;
+      ringkasTbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:#64748B;">Belum ada data laporan pada filter ini.</td></tr>`;
     } else {
       ringkasTbody.innerHTML = filtered.map((r, i) => `
         <tr>
           <td style="text-align:center;"><strong>${i + 1}</strong></td>
           <td style="text-align:center;">${formatTglIndo(r.tanggal)}</td>
+          <td>${escapeHtml(r.lokasi)}</td>
           <td>${escapeHtml(capFirst(r.namaBarang))}</td>
           <td>${escapeHtml(capFirst(r.uraian))}</td>
           <td style="text-align:center;">${renderStatusBadge(r.status)}</td>
@@ -883,6 +884,7 @@ function exportSpreadsheetCSV(event) {
     <tr>
       <td style="text-align:center;border:1px solid #000000;padding:6px;">${i + 1}</td>
       <td style="text-align:center;border:1px solid #000000;padding:6px;mso-number-format:'\\@';">${escapeHtml(formatTglIndo(r.tanggal))}</td>
+      <td style="border:1px solid #000000;padding:6px;">${escapeHtml(r.lokasi)}</td>
       <td style="border:1px solid #000000;padding:6px;">${escapeHtml(capFirst(r.namaBarang))}</td>
       <td style="border:1px solid #000000;padding:6px;">${escapeHtml(capFirst(r.uraian))}</td>
       <td style="text-align:center;border:1px solid #000000;padding:6px;">${escapeHtml(r.status)}</td>
@@ -951,18 +953,19 @@ function exportSpreadsheetCSV(event) {
         </tr>
         <tr><td colspan="14"></td></tr>
         <tr>
-          <td colspan="5" style="font-size:11pt;font-weight:bold;padding:6px 0;">
+          <td colspan="6" style="font-size:11pt;font-weight:bold;padding:6px 0;">
             A. TABEL REKAPITULASI RINGKAS (FORMAT LAPORAN BULANAN)
           </td>
         </tr>
         <tr>
-          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">No</th>
-          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">Tanggal</th>
-          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">Barang</th>
-          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">Permasalahan</th>
-          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">Status</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">NO</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">TANGGAL</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">RUANGAN</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">BARANG</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">PERMASALAHAN</th>
+          <th style="border:1px solid #000000;padding:8px;font-weight:bold;text-align:center;">STATUS</th>
         </tr>
-        ${ringkasRows || '<tr><td colspan="5" style="border:1px solid #000000;padding:8px;text-align:center;">Belum ada data laporan</td></tr>'}
+        ${ringkasRows || '<tr><td colspan="6" style="border:1px solid #000000;padding:8px;text-align:center;">Belum ada data laporan</td></tr>'}
         <tr><td colspan="14"></td></tr>
         <tr>
           <td colspan="14" style="font-size:11pt;font-weight:bold;padding:6px 0;">
@@ -1079,7 +1082,7 @@ function getDocSeedData() {
       "Blok/Kamar Hunian",
       "Dapur",
       "Area Penjagaan",
-      "Dapur dan WC"
+      "WC"
     ],
     reports: []
   };
