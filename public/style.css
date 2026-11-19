@@ -1881,6 +1881,28 @@ body.sidebar-collapsed .app-sidebar {
 }
 
 @media (max-width: 960px) {
+  .header-flex {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .system-header-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .header-kicker {
+    font-size: 9.5px;
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .header-title {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .header-title span {
+    display: none;
+  }
   .grid-2-col, .grid-3-col, .qr-and-phone-grid, .gform-row-split {
     grid-template-columns: 1fr;
   }
@@ -1892,7 +1914,7 @@ body.sidebar-collapsed .app-sidebar {
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 95;
+    z-index: 120;
     transform: translateX(-100%);
     margin-left: 0 !important;
     opacity: 1 !important;
@@ -1908,7 +1930,8 @@ body.sidebar-collapsed .app-sidebar {
     position: fixed;
     inset: 0;
     background: rgba(15, 23, 42, 0.45);
-    z-index: 90;
+    z-index: 110;
+    cursor: pointer;
     animation: sectionSlideUp 0.2s ease;
   }
   .header-status-pill {

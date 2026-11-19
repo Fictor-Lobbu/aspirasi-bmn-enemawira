@@ -154,6 +154,10 @@ function toggleSidebar() {
   }
 }
 
+function closeSidebar() {
+  document.body.classList.remove('sidebar-mobile-open');
+}
+
 // NAVIGASI ANTAR STEP (1 s.d 5) - SINKRON HEADER & SIDEBAR
 function openStep(stepId) {
   document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
@@ -167,10 +171,8 @@ function openStep(stepId) {
     el.classList.add('active');
   });
 
-  // Tutup drawer sidebar otomatis di layar HP setelah klik menu
-  if (window.innerWidth <= 960) {
-    document.body.classList.remove('sidebar-mobile-open');
-  }
+  // Selalu tutup drawer mobile sidebar setiap kali menu ditekan
+  closeSidebar();
 
   if (stepId === 'step-carakerja') {
     setTimeout(() => renderMainQRCodes(), 50);
