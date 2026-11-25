@@ -1086,7 +1086,9 @@ function getDocSeedData() {
       "Blok/Kamar Hunian",
       "Dapur",
       "Area Penjagaan",
-      "WC"
+      "WC",
+      "Aula",
+      "Klinik"
     ],
     reports: []
   };

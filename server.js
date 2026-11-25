@@ -61,7 +61,9 @@ const INITIAL_DB = {
     "Blok/Kamar Hunian",
     "Dapur",
     "Area Penjagaan",
-    "WC"
+    "WC",
+    "Aula",
+    "Klinik"
   ],
   reports: []
 };
